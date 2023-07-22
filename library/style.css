@@ -216,3 +216,234 @@ a:hover {
     border-color: #0C0C0E ;
     background-color: #0C0C0E;
 }
+
+.favorites{
+    margin: 0;
+    margin-top: 36px;
+}
+
+.favorites_txt {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    margin: 0;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.favorites__radio {
+    display: flex;
+    column-gap: 76px;
+    align-items: baseline;
+    width: 700px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+.favorites_lbl_inp__bl {
+     margin: 0;
+     margin: 5px;
+     cursor: pointer; 
+}
+
+.favorites_lbl {
+    display: flex;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    margin: 0;   
+    cursor: pointer;
+}
+
+.favorites_lbl:has(:checked){
+    font-weight: 700;    
+}
+
+.favorites_inp__block {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.favorites_ipt {
+    box-sizing: border-box;
+    accent-color: black;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+    border:0;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.books_top {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.favorites_book_one {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 550px;
+    height: 555px;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.favorites_book__staff {
+    display: inline-block;
+    box-sizing: border-box;
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-left: 19px;
+    margin-top: 14px;
+}
+
+.favorites_book__staff::after {
+    box-sizing:border-box ;
+    content: "";
+    display: flex;
+    justify-content: flex-start;
+    width: 60px;;
+    border-bottom: 1px solid #BB945F;
+    margin: 0;
+}
+
+.favorites_name_book {
+    display: flex;
+    box-sizing: border-box;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.favorites_name_author {
+    box-sizing: border-box;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    margin: 0;
+    margin-left: 19px;
+}
+
+.favorites_info_book {
+    display: inline-block;
+    box-sizing: border-box;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin: 0;
+    margin-left: 19px;
+    margin-top: 19px;
+    width: 359px;
+    height: 320px;
+    padding: 0;
+}
+
+.favorites_btm_book {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    width: 75px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #0C0C0E;
+    background-color: #FFF;
+    margin: 0;
+    margin-left: 19px;
+    margin-top: 15px;
+    transition-duration: 0.3s;
+}
+
+.favorites_btm_book:hover {
+    background-color: #BB945F;
+    border-color: #BB945F;
+}
+
+.favorites_img_book{
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    margin: 0;
+    margin-left: 389px;
+    margin-top: 254px;
+}
+
+.favorites_book_two {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 550px;
+    height: 555px;
+    border: 1px solid black;
+    margin: 0;
+    margin-right: 60px;
+    margin-top: 40px;
+}
+
+.favorites_btm_own {
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    width: 75px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #BB945F;
+    margin: 0;
+    margin-left: 19px;
+    margin-top: 15px;
+}
