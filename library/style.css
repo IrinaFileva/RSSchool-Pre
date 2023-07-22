@@ -104,3 +104,115 @@ a:hover {
     margin-right: 840px;
     background-color: black;
 }
+
+.container {
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.all_hd { display: block;
+    color: #0C0C0E;
+    font-family: "Forum";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.all_hd::after {
+    content: "";
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #0C0C0E;
+    margin-left: 695px;
+    margin-right: 695px;
+    padding: 0;
+}
+
+.p-about {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.image_about {
+    width: 100%;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 10px;  
+}
+
+.photo_about {
+    width: 450px;
+    height: 560px;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px; 
+}
+
+.about__btn {
+    display: flex;
+    justify-content: center;
+    width: 78px;
+    height: 26px;
+    margin: 0;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about__btn_frame {
+    display: flex;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.about_btn__inside{
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    margin: 5px;
+    cursor: pointer;
+    background-color:#0C0C0E; 
+    transition-duration: 0.3s;
+}
+
+.about_btn__inside:hover{
+    border: 2px;
+    border-color: #BB945F ;
+    background-color: #BB945F;
+}
+
+.about_btn__inside_active {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    margin: 5px;
+    cursor: pointer;
+    border: 0;
+    background-color:#BB945F; 
+    transition-duration: 0.3s;
+}
+
+.about_btn__inside_active:hover {
+    border-color: #0C0C0E ;
+    background-color: #0C0C0E;
+}
