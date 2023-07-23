@@ -447,3 +447,164 @@ a:hover {
     margin-left: 19px;
     margin-top: 15px;
 }
+
+.coffeeshop_dv {
+    width: 1440px;
+     margin: 0;
+     margin-top: 40px;
+     text-align: center;
+}
+
+.coffeeshop_info {
+    width: 1440px;
+    text-align: center;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.coffeeshop_menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffeeshop_menu__drinks {
+    display: inline-flex;
+    flex-direction: column;
+    width: 438px;
+    height: 520px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.menu_drinks__list {
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.menu_drinks__item {
+    display: inline-flex;
+    justify-content: space-between;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.drinks_menu__line {
+    width: 100px;
+    height: 1px;
+    background-color: #BB945F;
+    margin: 0;
+    margin-left: auto;
+    margin-top: 19px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.drinks_menu__price {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    margin: 0;
+    margin-left: 40px;
+    padding: 0;
+    padding-left: 10px;
+    text-align: right;
+}
+
+.coffeeshop_menu__desserts {
+    width: 482px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.menu_desserts__list {
+    text-align: right;
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    margin: 0;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.menu_desserts__item {
+    display: inline-flex;
+    justify-content: flex-end;
+    text-align: right;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 40px;
+    margin-right: 19px;
+    margin-left: auto;
+}
+
+.desserts_menu__line {
+    width: 100px;
+    height: 1px;
+    background-color: #BB945F;
+    margin: 0;
+    margin-top: 19px;
+    margin-left: 58px;
+    margin-right: 50px;
+}
+
+.desserts_menu__price {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    text-align: right;
+}
