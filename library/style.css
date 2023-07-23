@@ -3,18 +3,25 @@ html {
     }
 
 .body {
-    width: 1440px;
+    min-width: 1440px;
     margin: 0 auto;
 }
 
-.header {
+.container_block {
     display: flex;
     justify-content: space-between;
+    width: 1440px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.header {
     width: 100%;
-    min-height: 90px;
+    height: 90px;
     background-color: #000000;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .h1 {
@@ -74,9 +81,14 @@ a:hover {
     margin-left: 10px;
     width: 28px;
     height: 28px;
-}
+} 
 
 .div-welcome {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.welcome {
     display: flex;
     background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
     url(assets/img/Welcome.jpg);
@@ -113,7 +125,13 @@ a:hover {
     display: inline-block;
     justify-content: center;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
+}
+
+.about {
+    width: 1440px;
+    margin: 0 auto;
+
 }
 
 .all_hd { display: block;
@@ -222,7 +240,8 @@ a:hover {
 }
 
 .favorites{
-    margin: 0;
+    width: 1440px;
+    margin: 0 auto;
     margin-top: 36px;
 }
 
@@ -452,6 +471,11 @@ a:hover {
     margin-top: 15px;
 }
 
+.coffeeshop {
+    width: 1440px;
+    margin:0 auto;
+}
+
 .coffeeshop_dv {
     width: 1440px;
      margin: 0;
@@ -613,6 +637,11 @@ a:hover {
     text-align: right;
 }
 
+.ourcontact {
+    width: 1440px;
+    margin: 0 auto;
+}
+
 .ourcontact_dv {
     margin: 0;
     margin-top: 80px;
@@ -704,6 +733,10 @@ a:hover {
     margin-left: 7px;
 }
 
+.librarycard {
+    width: 1440px;
+    margin: 0 auto ;
+}
 
 .librarycard_dv {
     margin: 0;
@@ -879,6 +912,7 @@ a:hover {
 
 .footer_body {
     width: 1440px;
+    margin: auto;
 }
 
 .ftr_body_top_left {

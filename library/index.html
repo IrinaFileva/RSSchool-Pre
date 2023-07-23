@@ -7,24 +7,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter&display=swap" rel="stylesheet">
-    <link href="assets/icons/favicon.svg" rel="Icon" sizes="16*16">
+    <link href="assets/icons/favicon.svg" rel="Icon">
     <title>Library</title>
 </head>
 
 <body class="body">
   <header class="header">
-    <h1 class="h1">Brooklyn Public Library</h1>
-    <div class="nav-div">
-      <nav class="nav">
-        <ul class="nav-links">
-          <li><a href="#about" class="a-nav">About</a></li>
-          <li><a href="#favorites" class="a-nav">Favorites</a></li>
-          <li><a href="#coffeeshop" class="a-nav">Coffee shop</a></li>
-          <li><a href="#contacts" class="a-nav">Contacts</a></li>
-          <li><a href="#librarycard" class="a-nav">Library Card</a></li>
-        </ul>
-      </nav>
-      <img class="img1" src="assets/icons/icon_profile.svg" alt="Icon Profile">
+    <div class="container_block">
+      <h1 class="h1">Brooklyn Public Library</h1>
+      <div class="nav-div">
+        <nav class="nav">
+          <ul class="nav-links">
+            <li><a href="#about" class="a-nav">About</a></li>
+            <li><a href="#favorites" class="a-nav">Favorites</a></li>
+            <li><a href="#coffeeshop" class="a-nav">Coffee shop</a></li>
+            <li><a href="#contacts" class="a-nav">Contacts</a></li>
+            <li><a href="#librarycard" class="a-nav">Library Card</a></li>
+          </ul>
+        </nav>
+        <img class="img1" src="assets/icons/icon_profile.svg" alt="Icon Profile">
+      </div>
     </div>
   </header>
 
@@ -35,7 +37,7 @@
       </div>
     </section>
 
-    <section class="adout" id="about">
+    <section class="about" id="about">
       <div class="container">
         <h2 class="all_hd">About</h2>
           <p class="p-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
@@ -221,10 +223,9 @@
               <p class="libcard_table__name">Find your Library card</p>
               <form class="libcard_table">
                 <div class="libcard_block">
-                  <label class="libcard_table__lb">Brooklyn Public Library
+                  <label class="libcard_table__lb">Brooklyn Public Library</label>
                     <input class="libcard_table_inp" type="text" placeholder="Reader's name">
-                    <input class="libcard_table_inp" type="text" placeholder="Card number">
-                  </label>
+                    <input class="libcard_table_inp" type="text" placeholder="Card number"> 
                 </div>
                 <button class="libcard_table_btm">Check the card</button>
               </form>
