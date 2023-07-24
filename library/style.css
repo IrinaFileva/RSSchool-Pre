@@ -407,6 +407,7 @@ a:hover {
 }
 
 .favorites_btm_book {
+    cursor: pointer;
     color: #0C0C0E;
     text-align: center;
     font-family: Inter;
@@ -427,6 +428,7 @@ a:hover {
 }
 
 .favorites_btm_book:hover {
+    cursor: pointer;
     background-color: #BB945F;
     border-color: #BB945F;
 }
@@ -946,6 +948,7 @@ a:hover {
     display: inline;
     margin: 0;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .ftr_body_top_right {
@@ -1021,6 +1024,7 @@ a:hover {
     margin: 0;
     padding: 0;
     padding-left: 70px;
+    cursor: pointer;
 }
 
 .footer_body_username{
@@ -1035,4 +1039,5 @@ a:hover {
     letter-spacing: 2px;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
