@@ -2,55 +2,70 @@ html {
     scroll-behavior: smooth;
     }
 
+*{ 
+    box-sizing: border-box;
+}
+
 .body {
-    min-width: 1440px;
-    margin: 0 auto;
+    width: 1440px;
+    padding: 0;
+    margin: 0 auto; 
 }
 
 .container_block {
     display: flex;
-    justify-content: space-between;
     width: 1440px;
     height: auto;
     margin: 0 auto;
     padding: 0;
+    gap: 454px;
 }
 
 .header {
-    width: 100%;
+    width: 1440px;
     height: 90px;
-    background-color: #000000;
+    background-color: #0C0C0E;
     padding: 0;
     margin: 0 auto;
 }
 
 .h1 {
+    box-sizing: border-box;
     color: #FFF;
     font-family: "Forum";
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: 50px;
+    letter-spacing: 0.6px;
     margin-left: 20px;
     padding: 0;
-    letter-spacing: 0.6px;
 }
 
 .nav-div {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.nav{
+.nav {
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
     margin: 0;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 11px;
+    padding:0;
 }
 
 .nav-links {
+    box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
     list-style: none;  
-    justify-content: flex-end; 
     margin: 0;
     padding: 0;
 }
@@ -66,7 +81,7 @@ html {
     margin-right: 30px;
     margin-bottom: 20px;
     border-bottom: 0 solid rgb(248, 246, 246);
-    transition: 1s
+    transition: 1s;
 }
 
 a:hover {
@@ -75,10 +90,9 @@ a:hover {
 }
 
 .img1 { 
+    margin: 0;
     margin-top: 31px;
     margin-bottom: 31px;
-    margin-right: 22px;
-    margin-left: 10px;
     width: 28px;
     height: 28px;
 } 
@@ -86,16 +100,17 @@ a:hover {
 .div-welcome {
     width: 1440px;
     margin: 0 auto;
+    padding: 0;
 }
 
 .welcome {
     display: flex;
-    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
+    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 50%),
     url(assets/img/Welcome.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 100%;
+    width: 1440px;
     height: 600px;
     margin: 0;
     padding: 0;  
@@ -104,9 +119,8 @@ a:hover {
 .welcome_hd {
     display: inline-flex;
     flex-direction: column;
-    width: 520px;
-    height: 150px;
-    padding: 35px 40px;
+    width: 600px;
+    height: 220px;
     color: #FFF;
     text-align: center;
     font-family: Forum;
@@ -116,12 +130,15 @@ a:hover {
     line-height: 50px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    padding: 0;
+    padding-top: 35px;
     margin-top: 220px;
     margin-right: 840px;
     background-color: black;
 }
 
 .container {
+    width: 1440px;
     display: inline-block;
     justify-content: center;
     text-align: center;
@@ -131,7 +148,6 @@ a:hover {
 .about {
     width: 1440px;
     margin: 0 auto;
-
 }
 
 .all_hd { display: block;
@@ -174,10 +190,11 @@ a:hover {
 }
 
 .image_about {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin: 0;
     margin-top: 20px;
-    margin-left: 10px;  
+    margin-left: 15px; 
 }
 
 .photo_about {
@@ -185,16 +202,17 @@ a:hover {
     height: 560px;
     padding: 0;
     margin: 0;
-    margin-right: 20px; 
+    margin-right: 20px;
+    margin-left: 5px;
 }
 
 .about__btn {
     display: flex;
     justify-content: center;
-    width: 78px;
+    width: 80px;
     height: 26px;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 35px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -213,7 +231,8 @@ a:hover {
     border-radius: 100%;
     margin: 5px;
     cursor: pointer;
-    background-color:#0C0C0E; 
+    background-color:#0C0C0E;
+    border: #0C0C0E; 
     transition-duration: 0.3s;
 }
 
@@ -229,7 +248,7 @@ a:hover {
     border-radius: 100%;
     margin: 5px;
     cursor: pointer;
-    border: 0;
+    border: 0 solid #BB945F;
     background-color:#BB945F; 
     transition-duration: 0.3s;
 }
@@ -239,10 +258,10 @@ a:hover {
     background-color: #0C0C0E;
 }
 
-.favorites{
+.favorites {
     width: 1440px;
     margin: 0 auto;
-    margin-top: 36px;
+    margin-top: 35px;
 }
 
 .favorites_txt {
@@ -273,7 +292,7 @@ a:hover {
 
 .favorites_lbl_inp__bl {
      margin: 0;
-     margin: 5px;
+     padding: 5px;
      cursor: pointer; 
 }
 
@@ -286,7 +305,8 @@ a:hover {
     font-weight: 400;
     line-height: normal;
     padding: 0;
-    margin: 0;   
+    margin: 0; 
+    margin-left: 5px;  
     cursor: pointer;
 }
 
@@ -295,23 +315,27 @@ a:hover {
 }
 
 .favorites_inp__block {
-    width: 27px;
-    height: 27px;
+    display: inline-flex;
+    width: 17px;
+    height: 17px;
+    border: 2px solid black;
+    border-radius: 50%;
     cursor: pointer;
-    text-align: center;
-    margin-right: 15px;
+    margin-right: 20px;
+    margin-top: 5px;
+    padding: 0;
 }
 
 .favorites_ipt {
-    box-sizing: border-box;
+    display: inline-block;
     accent-color: black;
     cursor: pointer;
-    width: 17px;
-    height: 17px;
-    border:0;
-    padding: 0;
+    width: 13px;
+    height: 13px;
+    padding: 0 ;
     margin: 0;
-    margin-top: 5px;
+    padding-bottom: 5px;
+    
 }
 
 .books_top {
@@ -438,8 +462,8 @@ a:hover {
     width: 200px;
     height: 300px;
     margin: 0;
-    margin-left: 389px;
-    margin-top: 254px;
+    bottom: -1px;
+    right: -41px;
 }
 
 .favorites_book_two {
@@ -481,13 +505,12 @@ a:hover {
 
 .coffeeshop_dv {
     width: 1440px;
-     margin: 0;
-     margin-top: 40px;
-     text-align: center;
+    margin: 0;
+    margin-top: 40px;
+    text-align: center;
 }
 
 .coffeeshop_info {
-    width: 1440px;
     text-align: center;
     color: #000;
     text-align: center;
@@ -846,6 +869,7 @@ a:hover {
     letter-spacing: 1px;
     transition-duration: 0.3s;
     cursor: pointer;
+    padding:0 auto;
 }
 
 .libcard_table_btm:hover {
@@ -908,8 +932,7 @@ a:hover {
 }
 
 .footer {
-    width: 100%;
-    background-color: #000;
+    background-color: #0C0C0E;
     margin-top: 25px;
 }
 
@@ -941,7 +964,6 @@ a:hover {
     padding: 0;
     margin: 0;
     margin-top: 18px;
-    
 }
 
 .footer_item_icon {
@@ -957,8 +979,7 @@ a:hover {
     flex-direction: column;
     text-align: right;
     margin: 0;
-    margin-left: 1034px;
-    
+    margin-left: 1033px;
 }
 
 .footer_workschedule {
@@ -979,7 +1000,7 @@ a:hover {
     width: 1400px;
     height: 1px ;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 19px;
 }
 
 .weekends {
