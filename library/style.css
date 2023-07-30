@@ -984,6 +984,12 @@ a:hover {
     font-weight: 400;
     line-height: 20px;
     text-decoration: none;
+    transition: 0,5s;
+}
+
+.ftr_adrs:hover {
+    color: #BB945F;
+    cursor: pointer;
 }
 
 .footer_list_icon {
