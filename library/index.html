@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -27,6 +27,11 @@
           </ul>
         </nav>
         <img class="img1" src="assets/icons/icon_profile.svg" alt="Icon Profile">
+        <div class="burger_main">
+          <div class="burger_line"></div>
+          <div class="burger_line"></div>
+          <div class="burger_line"></div>
+        </div>
       </div>
     </div>
   </header>
@@ -43,9 +48,13 @@
         <h2 class="all_hd">About</h2>
           <p class="p-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
           <div class="image_about">
-            <img class="photo_about" src="assets/img/image1.jpg" alt="image1">
-            <img class="photo_about" src="assets/img/image2.jpg" alt="image2">
-            <img class="photo_about" src="assets/img/image3.jpg" alt="image3">
+            <img class="about_carret" src="assets/icons/Carret_Left.svg" alt="carret_left">
+            <img class="photo_about about_foto1" src="assets/img/image1.jpg" alt="image1">
+            <img class="photo_about about_foto2" src="assets/img/image2.jpg" alt="image2">
+            <img class="photo_about about_foto3" src="assets/img/image3.jpg" alt="image3">
+            <img class="photo_about about_foto4" src="accets/img/image4.jpg" alt="image4">
+            <img class="photo_about about_foto5" src="accets/img/image5.jpg" alt="image5">
+            <img class="about_carret" src="assets/icons/Carret_Right.svg" alt="carret_right">
           </div>
           <div class="about__btn">
             <div class="about__btn_frame">
@@ -56,6 +65,12 @@
             </div>
             <div class="about__btn_frame">
               <button class="about_btn__inside"></button>
+            </div>
+            <div class="about__btn_frame btn-none">
+              <button class="about_btn__inside btn__inside_none"></button>
+            </div>
+            <div class="about__btn_frame btn-none">
+              <button class="about_btn__inside btn__inside_none"></button>
             </div>
           </div>
         </div>
@@ -139,7 +154,13 @@
       <section class="coffeeshop" id="coffeeshop">
         <div class="container coffeeshop_dv">
           <h2 class="all_hd">Coffee Shop</h2>
-            <p class="coffeeshop_info">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.&nbsp;<br>You can get a favorite book and read in coffee shop. our barista to cook you best coffee, and also you can try desserts<br> from bakery.</p>
+            <p class="coffeeshop_info">
+              In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.
+            </p>
+            <p class="coffeeshop_info info_sp">
+              You can get a favorite book and read in coffee shop. our barista to cook you best coffee, and also you can try desserts
+             from bakery.
+            </p>
         </div>
         <div class="coffeeshop_menu">
           <div class="coffeeshop_menu__drinks">
@@ -233,7 +254,7 @@
             </div>
             <div class="librarycard_request">
               <p class="librarycard_request__p">Get a reader card</p>
-              <p class="librarycard_request__txt">You will be able to see a reader card after<br> logging into account or you can register a new<br> account</p>
+              <p class="librarycard_request__txt">You will be able to see a reader card after logging into account or you can register a new account</p>
               <div class="librarycard_request_btms">
                 <button class="librarycard_request_btm">Sign Up</button>
                 <button class="librarycard_request_btm">Log in</button>
