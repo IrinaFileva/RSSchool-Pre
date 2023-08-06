@@ -8,6 +8,11 @@ html {
 
 .body {
   margin: 0;
+}
+
+.body_wrapper {
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -44,42 +49,56 @@ html {
   display: none;
 }
 
-.burger_line {
+.burger_line1,
+.burger_line2,
+.burger_line3 {
   width: 45px;
   height: 2px;
   background-color: white;
   margin: 0;
   margin-bottom: 8px;
 }
+ 
+.header.open .burger_line1 {
+  margin: 0;
+  position: absolute;
+  rotate: 45deg;
+}
+
+.header.open .burger_line2 {
+  margin:0;
+   opacity: 0;
+}
+
+.header.open .burger_line3{
+  position: absolute;
+  margin: 0;
+  rotate :-45deg;
+}
+
+.header.open .burger_main {
+   background-color: #000;
+   margin-top: 25px; 
+   margin-right: -7px; 
+}
 
 @media(max-width: 1024px) {
-  .nav {
-    display: none;
-  }
-
   .burger_main {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 0 auto;
-    margin-left: 40px;
+    padding: 0;
     margin-top: 12px;
-    cursor: pointer;
+    margin-left: 40px;
+    background-color: #0C0C0E;
+    border: none;
   }
-
-
-
-
 
   .about_foto3 {
     display: none;
   }
-
 }
-
-
-
-
 
 .nav-div {
   display: flex;
@@ -93,6 +112,37 @@ html {
   margin: 0;
   margin-right: 11px;
   padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+    margin:0;
+  }
+
+  .header.open .nav {
+    display:block;
+    position: absolute;
+    background-color: #000;
+    width: 332px;
+    height: 570px;
+    right: 0;
+    top: 0;
+  }
+   
+  .nav-links {
+    position: absolute;
+    top: 100px;
+    right: 78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:30px
+  }
+
+  .a-nav {
+    display: block;
+  }
 }
 
 .nav-links {
@@ -116,7 +166,6 @@ html {
   transition: 1s;
 }
 
-
 a:hover {
   border-bottom-width: 3px;
   cursor: pointer;
@@ -128,6 +177,13 @@ a:hover {
   margin-bottom: 11px;
   width: 28px;
   height: 28px;
+}
+
+.header.open .img1 {
+  position: absolute;
+  top: 20px;
+  right: 93px;
+  z-index: 2;
 }
 
 .div-welcome {
@@ -236,7 +292,6 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-
   .about_foto2 {
     display: none;
   }
@@ -244,7 +299,6 @@ a:hover {
   .image_about {
     justify-content: center;
     align-items: center;
-
   }
 
   .about_carret {
@@ -273,7 +327,6 @@ a:hover {
   .about_foto1 {
     margin: 0 32px;
   }
-
 }
 
 .photo_about {
@@ -350,7 +403,6 @@ a:hover {
   .about__btn {
     margin-top: 20px;
   }
-
 }
 
 .favorites {
@@ -431,7 +483,6 @@ a:hover {
   padding: 0;
   margin: 0;
   padding-bottom: 5px;
-
 }
 
 @media (max-width: 786px) {
@@ -572,7 +623,6 @@ a:hover {
   bottom: -1px;
   right: -41px;
 }
-
 
 .favorites_book_two {
   position: relative;
@@ -752,7 +802,6 @@ a:hover {
   .coffeeshop_menu__desserts {
     width: 100%;
     margin-top: 40px;
-    
   }
 }
 
@@ -838,7 +887,6 @@ a:hover {
   }
 }
 
-
 .ourcontact_dv_list {
   box-sizing: border-box;
   text-align: left;
@@ -874,7 +922,6 @@ a:hover {
   }
 }
  
-
 .ourcontact_phone {
   color: #000;
   font-family: Inter;
@@ -931,7 +978,6 @@ a:hover {
   margin: 0;
   margin-left: 7px;
   border-bottom: 0 solid #000;
-  ;
   transition: 1s;
 }
 
@@ -955,7 +1001,6 @@ a:hover {
   justify-content: space-between;
   margin-bottom: 15px;
 }
-
 
 @media (max-width: 768px) {
   .librarycard_allinfo {
