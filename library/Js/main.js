@@ -23,3 +23,30 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 });
 
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById('b').addEventListener('click', function () 
+    {
+        document.querySelector('.header').classList.remove('open')
+    })
+});
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById('c').addEventListener('click', function () 
+    {
+        document.querySelector('.header').classList.remove('open')
+    })
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById('d').addEventListener('click', function () 
+    {
+        document.querySelector('.header').classList.remove('open')
+    })
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById('i').addEventListener('click', function () 
+    {
+        document.querySelector('.header').classList.remove('open')
+    })
+});
+
