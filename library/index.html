@@ -44,30 +44,34 @@
         <p class="dm_text">Log In</p>
         <p class="btn_reg dm_text">Register</p>
     </div>
-    <div class="modal_register_background">
+    <div class="modal_register_background"></div>
       <div class="modal_register">
         <p class="register_name">Register</p>
         <svg class="register_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
           <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
           <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
         </svg>
-        <form class="register_form">
+        <form class="register_form" id="form">
           <label class="register_form_label">First name
-            <input class="register_form_input">
+            <input class="register_form_input first_Name" type="text" name="Name"required>
           </label>
           <label class="register_form_label">Last name
-            <input class="register_form_input">
+            <input class="register_form_input last_Name" type="text" name="LastName"required>
           </label>
           <label class="register_form_label">E-mail
-            <input class="register_form_input">
+            <input class="register_form_input email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
           </label>
           <label class="register_form_label">Password
-            <input class="register_form_input">
+            <input class="register_form_input password" type="password" name="password" minlength="8" required>
           </label>
-          <button class="librarycard_request_btm register_form_button">Sign Up</button>
+          <button class="register_form_button" type="submit">Sign Up</button>
         </form>
+        <div class="register_text_a">
+          <p class="register_text">Already have an account?</p>
+          <a class="register_a">Login</a>
+        </div>
       </div>
-    </div>
+    
     <svg class="img_prof" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
       <path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14Z" fill="white"/>
     </svg>
