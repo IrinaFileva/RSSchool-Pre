@@ -178,32 +178,50 @@ inpWinter.addEventListener('click', () => {
     blockSpring.style.opacity = '0';
     blockSummer.style.opacity = '0';
     blockAutumn.style.opacity = '0';
+    blockWinter.style.zIndex = '10';
+    blockSpring.style.zIndex = '0';
+    blockSummer.style.zIndex = '0';
+    blockAutumn.style.zIndex = '0';
 });
 inpSpring.addEventListener('click', () => {
     blockWinter.style.opacity = '0';
     blockSpring.style.opacity = '1';
     blockSummer.style.opacity = '0';
     blockAutumn.style.opacity = '0';
+    blockWinter.style.zIndex = '0';
+    blockSpring.style.zIndex = '10';
+    blockSummer.style.zIndex = '0';
+    blockAutumn.style.zIndex = '0';
 });
 inpSummer.addEventListener('click', () => {
     blockWinter.style.opacity = '0';
     blockSpring.style.opacity = '0';
     blockSummer.style.opacity = '1';
     blockAutumn.style.opacity = '0';
+    blockWinter.style.zIndex = '0';
+    blockSpring.style.zIndex = '0';
+    blockSummer.style.zIndex = '10';
+    blockAutumn.style.zIndex = '0';
 });
 inpAutumn.addEventListener('click', () => {
     blockWinter.style.opacity = '0';
     blockSpring.style.opacity = '0';
     blockSummer.style.opacity = '0';
     blockAutumn.style.opacity = '1';
+    blockWinter.style.zIndex = '0';
+    blockSpring.style.zIndex = '0';
+    blockSummer.style.zIndex = '0';
+    blockAutumn.style.zIndex = '10';
+    
 });
 
 // Profile Main//
-const main = document.querySelector('.main')
-const header = document.querySelector('.header')
- const btnProfile = document.querySelector('.profile_div')
- const startMenu = document.querySelector('.dropMenu')
- const btnProfile2 = document.querySelector('.img1')
+
+const main = document.querySelector('.main');
+const header = document.querySelector('.header');
+const btnProfile = document.querySelector('.profile_div');
+const startMenu = document.querySelector('.dm_noAuth');
+const btnProfile2 = document.querySelector('.img1');
 
 
 btnProfile.addEventListener('click', () => {
@@ -250,39 +268,65 @@ registerBack.addEventListener('click', () => {
     registerMain.style.display = 'none';
 })
 
-// отправка данных //
+// Submit Form //
 
-const form = document.getElementById('form')
 const buttonSubmit = document.querySelector('.register_form_button')
 const inputFirstName = document.querySelector('.first_Name')
 const inputLastName = document.querySelector('.last_Name')
 const inputEmail = document.querySelector('.email')
 const inputPassword = document.querySelector('.password')
 
-buttonSubmit.addEventListener('click', () => {
-    let firstNameVal = inputFirstName.value;
-    let lastNameVal = inputLastName.value;
-    let EmailVal = inputEmail.value;
-    let passwordVal = inputPassword.value;
 
-    let name = inputFirstName.name;
-    let lastName = inputLastName.name;
-    let email = inputEmail.name;
-    let password = inputPassword.name;
+function processNot(evt) {
+    evt.preventDefault();
+}
 
-    document.body.classList.add('.no-scrolling')
+buttonSubmit.addEventListener('click', (g) => {     
+    g.stopPropagation()
+    g.preventDefault()
 
-    localStorage.setItem(name, firstNameVal);
-    localStorage.setItem(lastName, lastNameVal);
-    localStorage.setItem(email, EmailVal);
-    localStorage.setItem(password, passwordVal);
+    let firstNameVal = inputFirstName.value
+    let lastNameVal = inputLastName.value
+    let EmailVal = inputEmail.value
+    let passwordVal = inputPassword.value
 
-    registerBack.style.display = 'none';
-    registerMain.style.display = 'none';
+    const name = inputFirstName.name
+    const lastName = inputLastName.name
+    const email = inputEmail.name
+    const password = inputPassword.name
+
+    localStorage.setItem(name, firstNameVal)
+    localStorage.setItem(lastName, lastNameVal)
+    localStorage.setItem(email, EmailVal)
+    localStorage.setItem(password, passwordVal)
+
+    registerBack.style.display = 'none'
+    registerMain.style.display = 'none'
+
+    let NumberCard = Math.floor(Math.random() * 1000000000000000 +1000000000000000)
+    localStorage.setItem('Number Card', NumberCard)
+
+    let ofTextSvg = document.querySelector('.svg_prof_text')
+    ofTextSvg.innerHTML = textProfileImg;
+     
+    let titleProf = document.querySelector('.prof_title-text')
+    titleProf.innerHTML = titleTextProf;
+
+    btnProfile.style.display = 'none'
+    btnProfile2.style.display = 'none'
+
+    let imgProf = document.querySelector('.img_prof')
+    let nav = document.querySelector('.nav-links')
+    imgProf.style.display = 'block'
+    imgProf.style.zIndex = '3'
+    nav.style.marginRight = '30px'  
 })
 
-
-
+let profileImg1 = localStorage.getItem('Name');
+let profileImg2 = localStorage.getItem('LastName'); 
+let titleTextProf = profileImg1 + ' ' + profileImg2; 
+let textProfileImg = profileImg1[0] + profileImg2[0]; 
+ 
 
 
 
