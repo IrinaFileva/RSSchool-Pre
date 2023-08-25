@@ -223,7 +223,6 @@ const btnProfile = document.querySelector('.profile_div');
 const startMenu = document.querySelector('.dm_noAuth');
 const btnProfile2 = document.querySelector('.img1');
 
-
 btnProfile.addEventListener('click', () => {
     startMenu.style.display = 'flex'
     btnProfile.style.display = 'none'
@@ -276,11 +275,6 @@ const inputLastName = document.querySelector('.last_Name')
 const inputEmail = document.querySelector('.email')
 const inputPassword = document.querySelector('.password')
 
-
-function processNot(evt) {
-    evt.preventDefault();
-}
-
 buttonSubmit.addEventListener('click', (g) => {     
     g.stopPropagation()
     g.preventDefault()
@@ -303,12 +297,18 @@ buttonSubmit.addEventListener('click', (g) => {
     registerBack.style.display = 'none'
     registerMain.style.display = 'none'
 
-    let NumberCard = Math.floor(Math.random() * 1000000000000000 +1000000000000000)
-    localStorage.setItem('Number Card', NumberCard)
+    let cardNumber = Math.floor(Math.random() * 1000000000000000 +1000000000000000);
+    let NumberCard = cardNumber.toString(16).toUpperCase();
+    localStorage.setItem('Number Card', NumberCard);
+    
+    let profileImg1 = localStorage.getItem('Name');
+    let profileImg2 = localStorage.getItem('LastName'); 
 
+    let textProfileImg = profileImg1[0] + profileImg2[0];
     let ofTextSvg = document.querySelector('.svg_prof_text')
     ofTextSvg.innerHTML = textProfileImg;
-     
+    
+    let titleTextProf = profileImg1 + ' ' + profileImg2;
     let titleProf = document.querySelector('.prof_title-text')
     titleProf.innerHTML = titleTextProf;
 
@@ -320,12 +320,64 @@ buttonSubmit.addEventListener('click', (g) => {
     imgProf.style.display = 'block'
     imgProf.style.zIndex = '3'
     nav.style.marginRight = '30px'  
-})
 
-let profileImg1 = localStorage.getItem('Name');
-let profileImg2 = localStorage.getItem('LastName'); 
-let titleTextProf = profileImg1 + ' ' + profileImg2; 
-let textProfileImg = profileImg1[0] + profileImg2[0]; 
+    let inpCardName = document.querySelector('.libcard_inp_name')
+    let inpCardNumber = document.querySelector('.libcard_inp_number')
+    let btnLibCard = document.querySelector('.libcard_table_btm')
+    let iconsBlock = document.querySelector('.librarycard_icons')
+    let numberCard2 = localStorage.getItem('Number Card')
+       
+    inpCardName.addEventListener('input', () => {
+        if (inpCardName.value === profileImg1) {
+            btnLibCard.style.display = 'none'
+            iconsBlock.style.display = 'flex'
+        }
+        if (inpCardNumber.value === '') {
+            btnLibCard.style.display = 'block'
+            iconsBlock.style.display = 'none'
+        }
+    })
+    inpCardNumber.addEventListener('input', () => {
+        if (inpCardNumber.value === numberCard2) {
+            btnLibCard.style.display = 'none'
+            iconsBlock.style.display = 'flex'
+        }
+        if (inpCardName.value === '') {
+            btnLibCard.style.display = 'block'
+            iconsBlock.style.display = 'none'
+        }
+    })
+        
+})
+// Modal Login //
+    
+const btnLogin = document.querySelector('.btn_login');
+const btnLogin2 = document.querySelector('.loginLC');
+const btnCloseModLogin = document.querySelector('.login_button_close');
+const loginBack = document.querySelector('.modal_login_background');
+const loginMain = document.querySelector('.modal_login');
+
+btnLogin.addEventListener('click', () => {
+    startMenu.style.display = 'none';
+    loginBack.style.display = 'flex';
+    loginMain.style.display = 'flex';
+    btnProfile.style.display = 'block';
+});
+btnLogin2.addEventListener('click', () => {
+    loginBack.style.display = 'flex';
+    loginMain.style.display = 'flex';
+});
+btnCloseModLogin.addEventListener('click', () => {
+    loginBack.style.display = 'none';
+    loginMain.style.display = 'none';
+});
+loginBack.addEventListener('click', () => {
+    loginBack.style.display = 'none';
+    loginMain.style.display = 'none';
+});
+
+    
+
  
 
 
