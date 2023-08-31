@@ -165,10 +165,11 @@
     width: 332px;
     height: 570px;
     background-color:#0C0C0E ;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding: 100px 0;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -218,6 +219,7 @@
 .profile_div {
   display: block;
   position: absolute;
+  border-radius: 100%;
   z-index: 2;
   width: 30px;
   height: 30px;
@@ -226,6 +228,7 @@
   cursor: pointer;
 }
 .profile_div2 {
+  border-radius: 100%;
   display: none;
   position: absolute;
   z-index: 2;
@@ -234,6 +237,7 @@
   top: 31px;
   right: 20px;
   cursor: pointer;
+  margin-left: 30px;
 }
 
 @media (max-width: 1024px){
@@ -266,6 +270,15 @@
   margin: 0;
   right: 21px;
   top: 31px;
+}
+
+@media(max-width: 768px) {
+  .img_prof{
+    right: 105px;
+  }
+  .profile_div2 {
+    right: 105px;
+  }
 }
 
 .img_prof:hover{
@@ -318,6 +331,10 @@
   margin-top: 5px;
 }
 
+.text_number_card{
+  font-size: 12px;
+}
+
 .dm_h::after {
   content: "";
   display: flex;
@@ -353,16 +370,16 @@
 .register_relative {
   position: relative;
 }
-.modal_register_background {
-  display: none;
-  background-color: rgba(60,60,60,0.8);
-  position: fixed;
-  align-items: center;
+.modal_background {
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  position: fixed;
   top:0;
   z-index: 3;
+  display: none;
+  align-items: center;
+  background-color: rgba(60,60,60,0.8);
+  cursor: pointer;
 }
 .modal_register{
   position: fixed;
@@ -457,6 +474,7 @@
   line-height: normal;
   letter-spacing: 1px;
   margin-top: 10px;
+  margin-left:25px;
 }
 .register_form_button:hover {
   border: none;
@@ -494,17 +512,7 @@
 }
 
 /* Modal login */
-.modal_login_background {
-  display: none;
-  background-color: rgba(60,60,60,0.8);
-  position: fixed;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  top:0;
-  z-index: 3;
-}
+
 .modal_login{
     position: fixed;
     display: none;
@@ -515,6 +523,11 @@
     top: 30%;
     background-color: #FFF;
     z-index: 50;
+}
+@media(max-width: 768px){
+  .modal_login {
+    left: 35%;
+  }
 }
 .login_name{
   color: #000;
@@ -588,67 +601,64 @@
   line-height: normal;
   letter-spacing: 1px;
   margin-top: 10px;
+  cursor: pointer;
 }
 .login_form_button:hover {
   border: none;
   background-color: #BB945F;
 }
+.register_a:hover{
+  color:#BB945F;
+  cursor: pointer;
+}
 
-/* Modal Profile */
-.modal_profile {
-  display: none;
-  position: fixed;
-  background-color: #FFF;
-  top: 150px;
-  right: 500px;
+/* Modal My Profile */
+.modal-MyProfile {
   width: 600px;
   height: 400px;
+  display: none;
+  position: fixed;
+  top: 150px;
+  right: 27%;
+  z-index: 50;
+  background-color: #FFF;
   margin: 0 auto;
-  z-index: 50px;
+  
 }
 .modal_profile_left {
-  display: flex;
-  flex-direction: column;
   width: 170px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
   background-color: #000;
 }
-.avatar {
+.modalMyProfile_avatar__text{
+  color: #BB945F;
+  font: normal 400 20px/20px Inter; 
+  text-transform: capitalize;
+  text-align: center;
   width: 80px;
   height: 80px;
   background-color: #FFF;
   margin: 0 auto;
-  margin-top: 139px;
-  color: #BB945F;
-  text-align: center;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: capitalize;
+  margin-top: 140px;
+  padding-top: 30px;
 }
-.modal_name {
-  background-color: #FFF;
+.modalMyProfile_name__text {
+  color: #000;
+  font: normal 400 20px/20px Inter;
+  text-transform: capitalize;
+  text-align: center;
   width: 120px;
-  height: 30px;
+  min-height: 30px;
+  background-color: #FFF;
   margin: 0 auto;
   margin-top: 15px;
-  color: #000;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: capitalize;
+  padding-top:5px;
 }
 .modal_profile_h {
   color: #000;
-  font-family: Forum;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
+  font: normal 400 40px/20px Forum;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   padding:0;
@@ -659,6 +669,11 @@
   position: absolute;
   top: 23px;
   right: 23px;
+  cursor: pointer;
+}
+.modal_profile_btn_close:hover{
+  border-radius: 100%;
+  border: 2px solid black;
 }
 .modal_profile_icons{
   display: flex;
@@ -677,11 +692,7 @@
 }
 .icons_text{
   color: #000;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; 
+  font: normal 400 20px/20px Inter;
   letter-spacing: 0.4px;
   text-transform: capitalize;
   padding: 0;
@@ -693,11 +704,7 @@
 }
 .icons_number{
   color: #000;
-  font-family: Inter;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
+  font: normal 400 10px/20px Inter;
   letter-spacing: 0.2px;
   text-transform: capitalize;
   margin: 0;
@@ -705,19 +712,176 @@
 }
 .modal_profile_p{
   color: #0C0C0E;
-  font-family: Inter;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
+  font: normal 400 25px/20px Inter;
   padding:0;
   margin: 0;
   margin-left: 20px;
+  margin-top: 20px;
+}
+.modal_profile_books_link{
+  width: 362px;
+  height: 50px;
+  margin: 0px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.profile_books__item {
+  color: #000;
+  font: normal 400 20px/20px Inter;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.modalProfile_div__cardNumber{
+  display: flex;
+}
+.modalProfile_cardNumber{
+  color: #0C0C0E;
+  font: normal 400 20px/20px Inter;
+  margin: 0;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.modalProfile_cardNumber_linkCard{
+  color: #BB945F;
+  font: normal 400 20px/20px Inter;
+  text-align: center;
+  margin: 0;
+  margin-left: 15px;
   margin-top: 40px;
 }
+.modalProfile_iconCopy{
+  margin: 0;
+  margin-left: 10px ;
+  margin-top: 41px;
+  cursor: pointer;
+  border: none;
+  background-color: #FFF;
+}
+.modalProfile_iconCopy:hover{
+  border-radius: 5px;
+  border: 1px solid #8E8E8E;
+}
+/* Modal Buy a Card*/
+.modal_buyCard {
+  display: none;
+  width: 640px;
+  height: 540px;
+  position: fixed;
+  left: 26%;
+  top: 10%;
+  z-index: 50;
+  background-color: #FFF;
+}
+.modal_buyCard_header {
+  position: relative;
+  display: flex;
+  width: 640px;
+  height: 60px;
+  background-color: #0C0C0E;
+}
+.modal_buyCard_heading {
+  color: #FFF;
+  font: normal 400 40px/20px Forum; 
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0 auto; 
+  margin-top: 20px; 
+}
+.modal_buyCard_button__close{
+  position: absolute; 
+  top: 23px;
+  right: 18px;
+  cursor: pointer;
+}
+.modal_buyCard_button__close:hover{
+  border-radius: 100%;
+  border: 2px solid black;
+}
+.modal_buyCard_main{
+  display: flex;
+}
+.modal_buyCard_leftSide{
+  width: 200px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  margin-left: 35px;
+  margin-top: 30px;
+}
+.modal_buyCard_label{
+  color: #000;
+  font: normal 400 15px/20px Inter;
+  letter-spacing: 0.3px;
+  margin-right: 50px;
+}
+.label-CVC{
+  padding-right: 100px;
+}
+.modal_buyCard_input__max{
+  width: 200px;
+  height: 20px;
+  border: 1px solid #BB945F;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.modal_buyCard_input__mini{
+  width: 45px;
+  height: 20px;
+  border: 1px solid #BB945F;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  outline: none;
+}
+.input-CVC{
+  margin-bottom: 20px;
+}
+.modal_buyCard_block-buttonPrice{
+  display: flex;
+}
+.modal_buyCard_button-buy{
+  color: #0C0C0E;
+  font: normal 700 10px/normal Inter;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 75px;
+  height: 30px;
+  background-color: #FFF;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  padding: auto;
+  margin-top: 10px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.modal_buyCard_button-buy:hover {
+  background-color: #BB945F;
+}
+.modal_buyCard_price{
+  color: #0C0C0E;
+  font: normal 700 20px/20px Inter;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.modal_buyCard_rightText{
+  width: 330px;
+  text-align: left;
+  color: #8E8E8E;
+  font: normal 400 15px/20px Inter;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-left: 40px;  
+}
 
-
-
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .div-welcome {
   width: 100%;
@@ -1136,6 +1300,14 @@
 }
 
 @media (max-width: 1235px) {
+  .books_top_spring,
+  .books_top_autumn,
+  .books_top_summer{
+    flex-direction: column;
+    align-items: center;
+    left: 190px;
+  }
+
   .books_top_winter{
     flex-direction: column;
     align-items: center;
@@ -1145,7 +1317,7 @@
   .books_top_spring,
   .books_top_autumn,
   .books_top_summer{
-    left: 70px;
+    left: 60px;
   }
 }
 

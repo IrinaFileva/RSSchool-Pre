@@ -47,7 +47,7 @@
         <p class="btn_reg dm_text">Register</p>
     </div>
 
-    <div class="modal_register_background"></div>
+    <div class="modal_background"></div>
       <div class="modal_register">
         <p class="register_name">Register</p>
         <svg class="register_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
@@ -55,27 +55,27 @@
           <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
         </svg>
         <form class="register_form" id="form">
-          <label class="register_form_label">First name
+          <label class="register_form_label modalReg_label_name">First name
             <input class="register_form_input first_Name" type="text" name="Name" required>
           </label>
-          <label class="register_form_label">Last name
+          <label class="register_form_label modalReg_label_lastname">Last name
             <input class="register_form_input last_Name" type="text" name="LastName" required>
           </label>
-          <label class="register_form_label">E-mail
+          <label class="register_form_label modalReg_label_email">E-mail
             <input class="register_form_input email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
           </label>
-          <label class="register_form_label">Password
+          <label class="register_form_label modalReg_label_password">Password
             <input class="register_form_input password" type="password" name="password" minlength="8" required>
           </label>
-          <button class="register_form_button" type="submit">Sign Up</button>
         </form>
+        <button class="register_form_button" type="button">Sign Up</button>
         <div class="register_text_a">
           <p class="register_text">Already have an account?</p>
-          <a class="register_a">Login</a>
+          <a class="register_a login_register">Login</a>
         </div>
       </div>
 
-      <div class="modal_login_background"></div>
+      
       <div class="modal_login">
         <p class="login_name">Login</p>
         <svg class="login_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
@@ -83,17 +83,17 @@
           <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
         </svg>
         <form class="login_form">
-          <label class="login_form_label">E-mail or readers card
+          <label class="login_form_label modalLog_lbl_email">E-mail or readers card
             <input class="login_form_input login_email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
           </label>
-          <label class="login_form_label">Password
-            <input class="login_form_input password" type="password" name="password" minlength="8" required>
+          <label class="login_form_label modalLog_lbl_password">Password
+            <input class="login_form_input login_password" type="password" name="password" minlength="8" required>
           </label>
-          <button class="login_form_button" type="submit">Log In</button>
+          <button class="login_form_button" type="button">Log In</button>
         </form>
         <div class="register_text_a">
           <p class="register_text">Don’t have an account?</p>
-          <a class="register_a">Register</a>
+          <a class="register_a login_a">Register</a>
         </div>
       </div>
     
@@ -104,50 +104,110 @@
     </svg>
 
     <div class="dropMenu dm_withAuth">
-      <p class="dm_h">Profile</p>
-        <p class="dm_text">My profile</p>
+      <p class="dm_h text_number_card"></p>
+        <p class="dm_text dropMenu_myProfile_btn">My profile</p>
         <p class="dm_text">Log Out</p>
     </div>
 
-    <div class="modal_profile">
-      <div class="modal_profile_left">
-        <div class="avatar"></div>
-        <div class="modal_name" type="text"></div>
-      </div> 
-      <div class="modal_profile_right">
-        <h2 class="modal_profile_h">My profile</h2>
-        <svg class="modal_profile_btn_close"xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-          <path d="M2 16.8507L17 2.00001" stroke="#0C0C0E" stroke-width="3"/>
-          <path d="M2 2.14928L17 17" stroke="#0C0C0E" stroke-width="3"/>
-        </svg>
-        <div class="modal_profile_icons">
-          <div class="icons_div">
-            <p class="icons_text">Visits</p>
-            <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
-            </svg>
-            <p class="icons_number">0</p>
+    
+      <div class="modal-MyProfile">
+        <div class="modal_profile_left">
+          <p class="modalMyProfile_avatar__text"></p>
+          <p class="modalMyProfile_name__text"></p>
+        </div> 
+        <div class="modal_profile_right">
+          <h2 class="modal_profile_h">My profile</h2>
+          <svg class="modal_profile_btn_close"xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M2 16.8507L17 2.00001" stroke="#0C0C0E" stroke-width="3"/>
+            <path d="M2 2.14928L17 17" stroke="#0C0C0E" stroke-width="3"/>
+          </svg>
+          <div class="modal_profile_icons">
+            <div class="icons_div">
+              <p class="icons_text">Visits</p>
+              <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+              </svg>
+              <p class="icons_number modal-MyProfile_numberSessions">0</p>
+            </div>
+            <div class="icons_div">
+              <p class="icons_text">Bonuses</p>
+              <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+              </svg>
+              <p class="icons_number">1240</p>
+            </div>
+            <div class="icons_div">
+              <p class="icons_text">Books</p>
+              <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <rect width="20" height="21" fill="#BB945F"/>
+                <rect x="2" width="1" height="19" fill="#826844"/>
+                <rect x="1" width="1" height="21" fill="white"/>
+              </svg>
+              <p class="icons_number">0</p>
+            </div>
           </div>
-          <div class="icons_div">
-            <p class="icons_text">Bonuses</p>
-            <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-              <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+          <p class="modal_profile_p">Rented books</p>
+            <ul class="modal_profile_books_link">
+              <li class="profile_books__item"></li>
+              <li class="profile_books__item"></li>
+            </ul>
+          <div class="modalProfile_div__cardNumber">
+            <p class="modalProfile_cardNumber">Card number</p>
+            <p class="modalProfile_cardNumber_linkCard">F00234030</p>
+            <button class="modalProfile_iconCopy" title="Copy to Clipboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+              <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
+              <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
             </svg>
-            <p class="icons_number">1240</p>
-          </div>
-          <div class="icons_div">
-            <p class="icons_text">Books</p>
-            <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-              <rect width="20" height="21" fill="#BB945F"/>
-              <rect x="2" width="1" height="19" fill="#826844"/>
-              <rect x="1" width="1" height="21" fill="white"/>
-            </svg>
-            <p class="icons_number">0</p>
+          </button>
           </div>
         </div>
-        <p class="modal_profile_p">Rented books</p>
       </div>
     </div>
+    
+    <div class="modal_buyCard">
+      <div class="modal_buyCard_header">
+        <h3 class="modal_buyCard_heading">Buy a library card</h3>
+        <svg class="modal_buyCard_button__close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+          <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="modal_buyCard_main">
+      <div class="modal_buyCard_leftSide">
+        <label class="modal_buyCard_label label-bankCardNumder">Bank card number
+         <input class="modal_buyCard_input__max input-bankCardNumder" maxlength="19" type="text">
+        </label>
+        <label class="modal_buyCard_label label-expirationode">Expiration code
+          <input class="modal_buyCard_input__mini input-expirationode_left" max="2" type="number" >
+          <input class="modal_buyCard_input__mini input-expirationode_right" max="2" type="number">
+        </label>
+        <label class="modal_buyCard_label label-CVC">CVC
+          <input class="modal_buyCard_input__mini input-CVC" type="number" max="3">
+        </label>
+        <label class="modal_buyCard_label label-cardholderName">Cardholder name  
+          <input class="modal_buyCard_input__max input-cardholderName">
+        </label>
+        <label class="modal_buyCard_label label-postalCode">Postal code
+          <input class="modal_buyCard_input__max input-postalCode" type="number">
+        </label>
+        <label class="modal_buyCard_label label-cityTown">City / Town
+          <input class="modal_buyCard_input__max input-cityTown">
+        </label>
+        <div class="modal_buyCard_block-buttonPrice">
+          <button class="modal_buyCard_button-buy" type="button">Buy</button>
+          <p class="modal_buyCard_price">$ 25.00</p>
+        </div>
+      </div>
+      <p class="modal_buyCard_rightText">
+        If you are live, work, attend school, or pay property taxes in New York State, 
+        you can get a $25 digital library card right now using this online form. 
+        Visitors to New York State can also use this form to apply for a temporary card.
+      </p>
+    </div>
+    </div>
+
+    
   
 
   <main class="main">
@@ -478,20 +538,20 @@
           <div class="librarycard_allinfo">
             <div class="container_card">
               <p class="libcard_table__name">Find your Library card</p>
-              <form class="libcard_table">
+              <form class="libcard_table" id="form_libcard">
                 <div class="libcard_block">
                   <label class="libcard_table__lb">Brooklyn Public Library</label>
                     <input class="libcard_table_inp libcard_inp_name" type="text" placeholder="Reader's name">
                     <input class="libcard_table_inp libcard_inp_number" type="text" placeholder="Card number"> 
                 </div>
-                <button class="libcard_table_btm" type="submit" disabled="disabled">Check the card</button>
+                <button class="libcard_table_btm" type="button" disabled="disabled">Check the card</button>
                 <div class="modal_profile_icons librarycard_icons">
                   <div class="icons_div librarycard_icons__div">
                     <p class="icons_text librarycard_icons__text">Visits</p>
                     <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
                     </svg>
-                    <p class="icons_number librarycard_icons__number">0</p>
+                    <p class="icons_number librarycard_icons__number visits_number">0</p>
                   </div>
                   <div class="icons_div librarycard_icons__div">
                     <p class="icons_text librarycard_icons__text">Bonuses</p>
