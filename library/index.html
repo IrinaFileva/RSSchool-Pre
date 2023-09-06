@@ -38,45 +38,45 @@
     </div>
   </header>
     
-    <div class="profile_div"></div>
-    <div class="profile_div2"></div>
+  <div class="profile_div"></div>
+  <div class="profile_div2"></div>
 
-    <div class="dropMenu dm_noAuth">
-      <p class="dm_h">Profile</p>
-        <p class="btn_login dm_text">Log In</p>
-        <p class="btn_reg dm_text">Register</p>
+  <div class="dropMenu dm_noAuth">
+    <p class="dm_h">Profile</p>
+      <p class="btn_login dm_text">Log In</p>
+      <p class="btn_reg dm_text">Register</p>
+  </div>
+
+  <div class="modal_background"></div>
+
+  <div class="modal_register">
+    <p class="register_name">Register</p>
+    <svg class="register_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+      <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+      <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+    </svg>
+    <form class="register_form" id="form">
+      <label class="register_form_label modalReg_label_name">First name
+        <input class="register_form_input first_Name" type="text" name="Name" required>
+      </label>
+      <label class="register_form_label modalReg_label_lastname">Last name
+        <input class="register_form_input last_Name" type="text" name="LastName" required>
+      </label>
+      <label class="register_form_label modalReg_label_email">E-mail
+        <input class="register_form_input email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
+      </label>
+      <label class="register_form_label modalReg_label_password">Password
+        <input class="register_form_input password" type="password" name="password" minlength="8" required>
+      </label>
+    </form>
+    <button class="register_form_button" type="button">Sign Up</button>
+    <div class="register_text_a">
+      <p class="register_text">Already have an account?</p>
+      <a class="register_a login_register">Login</a>
     </div>
+  </div>
 
-    <div class="modal_background"></div>
-      <div class="modal_register">
-        <p class="register_name">Register</p>
-        <svg class="register_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
-          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
-        </svg>
-        <form class="register_form" id="form">
-          <label class="register_form_label modalReg_label_name">First name
-            <input class="register_form_input first_Name" type="text" name="Name" required>
-          </label>
-          <label class="register_form_label modalReg_label_lastname">Last name
-            <input class="register_form_input last_Name" type="text" name="LastName" required>
-          </label>
-          <label class="register_form_label modalReg_label_email">E-mail
-            <input class="register_form_input email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
-          </label>
-          <label class="register_form_label modalReg_label_password">Password
-            <input class="register_form_input password" type="password" name="password" minlength="8" required>
-          </label>
-        </form>
-        <button class="register_form_button" type="button">Sign Up</button>
-        <div class="register_text_a">
-          <p class="register_text">Already have an account?</p>
-          <a class="register_a login_register">Login</a>
-        </div>
-      </div>
-
-      
-      <div class="modal_login">
+  <div class="modal_login">
         <p class="login_name">Login</p>
         <svg class="login_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
           <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
@@ -106,10 +106,9 @@
     <div class="dropMenu dm_withAuth">
       <p class="dm_h text_number_card"></p>
         <p class="dm_text dropMenu_myProfile_btn">My profile</p>
-        <p class="dm_text">Log Out</p>
+        <p class="dm_text btn-LogOut">Log Out</p>
     </div>
 
-    
       <div class="modal-MyProfile">
         <div class="modal_profile_left">
           <p class="modalMyProfile_avatar__text"></p>
@@ -143,14 +142,11 @@
                 <rect x="2" width="1" height="19" fill="#826844"/>
                 <rect x="1" width="1" height="21" fill="white"/>
               </svg>
-              <p class="icons_number">0</p>
+              <p class="icons_number modal-MyProfile_numberBooks">0</p>
             </div>
           </div>
           <p class="modal_profile_p">Rented books</p>
-            <ul class="modal_profile_books_link">
-              <li class="profile_books__item"></li>
-              <li class="profile_books__item"></li>
-            </ul>
+            <ul class="modal_profile_books_link"></ul>
           <div class="modalProfile_div__cardNumber">
             <p class="modalProfile_cardNumber">Card number</p>
             <p class="modalProfile_cardNumber_linkCard">F00234030</p>
@@ -567,7 +563,7 @@
                       <rect x="2" width="1" height="19" fill="#826844"/>
                       <rect x="1" width="1" height="21" fill="white"/>
                     </svg>
-                    <p class="icons_number librarycard_icons__number">0</p>
+                    <p class="icons_number librarycard_icons__number librarycard_number_books">0</p>
                   </div>
                 </div>
               </form>
@@ -579,6 +575,11 @@
                 <button class="librarycard_request_btm">Sign Up</button>
                 <button class="librarycard_request_btm loginLC">Log in</button>
               </div>
+            </div>
+            <div class="librarycard_request librarycard_request__onRegister">
+              <p class="librarycard_request__p">Visit your profile</p>
+              <p class="librarycard_request__txt">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
+              <button class="librarycard_request_btm librarycard_request_btm-Profile">Profile</button>
             </div>
           </div>
         </div>

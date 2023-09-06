@@ -272,7 +272,7 @@
   top: 31px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1024px) {
   .img_prof{
     right: 105px;
   }
@@ -619,11 +619,40 @@
   display: none;
   position: fixed;
   top: 150px;
-  right: 27%;
+  left: 30%;
   z-index: 50;
   background-color: #FFF;
   margin: 0 auto;
-  
+}
+@media(max-width: 1200px){
+  .modal-MyProfile{
+    left:25%;
+ }
+};
+@media(max-width: 1070px){
+  .modal-MyProfile{
+    left:15%;
+  }
+}
+@media(max-width: 900px){
+  .modal-MyProfile{
+    left:15%;
+  }
+}
+@media(max-width: 768px){
+  .modal-MyProfile{
+    left:10%;
+  }
+}
+@media(max-width: 730px){
+  .modal-MyProfile{
+    left:5%;
+  }
+}
+@media(max-width: 660){
+  .modal-MyProfile{
+    left:0%;
+  }
 }
 .modal_profile_left {
   width: 170px;
@@ -725,7 +754,25 @@
   margin-top: 30px;
   margin-left: 10px;
 }
+.scroll_modal{
+  overflow: auto;
+}
+.scroll_modal::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;               /* ширина scrollbar */
+}
+.scroll_modal::-webkit-scrollbar-track {
+  background: #BB945F;        /* цвет дорожки */
+}
+.scroll_modal::-webkit-scrollbar-thumb {
+  background-color: #0C0C0E;    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  
+}
+
 .profile_books__item {
+  height: 20px;
+  white-space:nowrap;
   color: #000;
   font: normal 400 20px/20px Inter;
   letter-spacing: 2px;
@@ -762,6 +809,7 @@
   border-radius: 5px;
   border: 1px solid #8E8E8E;
 }
+
 /* Modal Buy a Card*/
 .modal_buyCard {
   display: none;
@@ -840,6 +888,14 @@
 .input-CVC{
   margin-bottom: 20px;
 }
+.input-cityTown {
+  text-transform: capitalize;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .modal_buyCard_block-buttonPrice{
   display: flex;
 }
@@ -877,37 +933,30 @@
   margin-left: 40px;  
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
+/* section Welcome */
 .div-welcome {
   width: 100%;
   margin: 0;
   padding: 0;
 }
-
 .welcome {
+  max-width: 1440px;
+  height: 600px;
   display: flex;
   background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 50%),
     url(assets/img/Welcome.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  max-width: 1440px;
-  height: 600px;
   margin: 0 auto;
   padding: 0;
 }
-
 .welcome_hd {
+  width: 600px;
+  height: 220px;
   display: inline-flex;
   flex-direction: column;
   justify-content: right;
-  width: 600px;
-  height: 220px;
   color: #FFF;
   text-align: center;
   font-family: Forum;
@@ -1951,6 +2000,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 400;
   line-height: 50px;
   letter-spacing: 0.6px;
+  text-transform: capitalize;
   padding-left: 20px;
   margin: 0;
   margin-top: 20px;
@@ -2015,6 +2065,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .librarycard_request {
+  display: block;
   text-align: right;
   margin-top: 10px;
 }
@@ -2103,7 +2154,9 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 0;
   background-color: #BB945F;
 }
-
+.librarycard_request__onRegister{
+  display: none;
+}
 .footer {
   max-width: 1440px;
   background-color: #0C0C0E;
