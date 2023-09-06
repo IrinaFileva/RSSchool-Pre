@@ -80,7 +80,7 @@ function carousel() {
     } else if (position === 4) {
         photo.classList.remove('center', 'left', 'right', 'next');
         photo.classList.add('next2');
-    }
+    };
 };
 
 function allButtons() {
@@ -151,7 +151,7 @@ carretLeft.addEventListener('click', () => {
         carretLeft.classList.add('active_carret');
     } else if (position === 0) {
         carretLeft.classList.remove('active_carret');
-    }
+    };
 });
 carretRight.addEventListener('click', () => {
     if (position !== 4) {
@@ -161,7 +161,7 @@ carretRight.addEventListener('click', () => {
         carretRight.classList.add('active_carret');
     } else if (position === 4 ) {
         carretRight.classList.remove('active_carret');
-    }
+    };
 });
 
 // Favorites Slider//
@@ -217,7 +217,7 @@ inpAutumn.addEventListener('click', () => {
     
 });
 
-// Дроп меню до регистрации и авторизации //
+// Меню Профиля до регистрации и авторизации //
 
 const main = document.querySelector('.main');                
 const header = document.querySelector('.header');           
@@ -225,50 +225,57 @@ const btnProfile2 = document.querySelector('.profile_div');
 const startMenu = document.querySelector('.dm_noAuth');     
 const btnProfile = document.querySelector('.img1');         
 
-btnProfile2.addEventListener('click', () => {  // клик на доп.кнопку 
-    startMenu.style.display = 'flex';          // открываем меню профиля
+// открываем меню профиля до регистрации/авторизации //
+btnProfile2.addEventListener('click', () => {  
+    startMenu.style.display = 'flex';          
     header.classList.remove('open');           
     btnProfile2.style.display = 'none';                             
 });
-btnProfile.addEventListener('click', () => {   // клик на иконку профиля 
-    startMenu.style.display = 'flex';          // открываем меню профиля
+btnProfile.addEventListener('click', () => {    
+    startMenu.style.display = 'flex';          
     header.classList.remove('open');           
     btnProfile2.style.display = 'block';       
 });
-main.addEventListener('click', () => {         // закрываем меню профиля кликом на main
+
+// закрываем меню профиля до регистрации/авторизации //
+main.addEventListener('click', () => {         
     startMenu.style.display = 'none';          
     btnProfile2.style.display = 'block';       
 });                                           
-header.addEventListener('click', () => {       // закрываем меню профиля кликом на хедер
+header.addEventListener('click', () => {       
     startMenu.style.display = 'none';          
     btnProfile2.style.display = 'block';       
 });
 
 const numberSessionsLibraryCard = document.querySelector('.visits_number');
 const numberBooksLibraryCard = document.querySelector('.librarycard_number_books');
-const inpCardName = document.querySelector('.libcard_inp_name');      // импут Имя в секции Либрари Кард
-const inpCardNumber = document.querySelector('.libcard_inp_number');  // импут Номер карты в секции Либрари Кард
-const btnLibCard = document.querySelector('.libcard_table_btm');      // кнопка проверки карты в секции Либрари Кард
-const iconsBlock = document.querySelector('.librarycard_icons');      // блок из иконок Визиты, Бонусы, Книги
+const inpCardName = document.querySelector('.libcard_inp_name');      
+const inpCardNumber = document.querySelector('.libcard_inp_number');  
+const btnLibCard = document.querySelector('.libcard_table_btm');      
+const iconsBlock = document.querySelector('.librarycard_icons');      
 
 let localItemName = localStorage.getItem('if-library:UserName');        
 let localItemLastName = localStorage.getItem('if-library:lastName');    
 let localItemNumberCard = localStorage.getItem('if-library:cardNumber'); 
 
-btnLibCard.removeAttribute('disabled');       // сброс с кнопки проверки карты атрибута disabled 
+// сброс с кнопки проверки карты атрибута disabled 
+btnLibCard.removeAttribute('disabled');       
 
-function hideIcons () {                      // функция включения кнопки проверки карты
-    btnLibCard.style.display = 'block';      // показываем кнопку проверки карты
-    iconsBlock.style.display = 'none';       // не показываем блок из иконок        
+// функция замены кнопки на иконки //
+function hideIcons () {                      
+    btnLibCard.style.display = 'block';      
+    iconsBlock.style.display = 'none';             
 };
 
-function clearInputs () {                    // функция очистки инпутов
+// функция очистки инпутов
+function clearInputs () {                    
     inpCardName.value = '';
     inpCardNumber.value = '';
 };
 
+// провека карты и данных профиля в секции Либрари кард, с показом иконок на 10 сек) 
 btnLibCard.addEventListener('click', () => {  
-    let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || [];    // клик по кнопке проверки карты   
+    let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || [];      
     if ((inpCardName.value === localItemName + ' ' + localItemLastName || inpCardName.value === localItemName) && inpCardNumber.value === localItemNumberCard) {
         numberSessionsLibraryCard.innerHTML = localStorage.getItem('if-library:numberOfSessions') || 0;
         numberBooksLibraryCard.innerHTML = lsButtonsBuy.length; 
@@ -290,32 +297,36 @@ const btnRegisterLC = document.querySelector('.librarycard_request_btm');
 const btnClose = document.querySelector('.register_button_close');          
 const aRegister = document.querySelector('.login_a');                       
 
+// открыть модалку регистрации //
 btnRegister.addEventListener('click', () => {   // клик на кнопку регистр в меню профиля
     backgroundModal.style.display = 'flex';     // открываем фон модалки регистрации
     registerMain.style.display = 'flex';        // открываем модалку регистрации
     startMenu.style.display = 'none';           
     btnProfile2.style.display = 'block';        
 });
-btnRegisterLC.addEventListener('click', () => { // клик на кпопку sing up в секции либрари кард
-    backgroundModal.style.display = 'flex';     // открываем фон модалки регистрации
-    registerMain.style.display = 'flex';        // открываем модалку регистрации
+btnRegisterLC.addEventListener('click', () => { 
+    backgroundModal.style.display = 'flex';     
+    registerMain.style.display = 'flex';        
     startMenu.style.display = 'none';           
 });
-btnClose.addEventListener('click', () => {      // клик по кнопке-крестику в модалке регистрации
-    backgroundModal.style.display = 'none';     // убираем фон модалки регистрации
-    registerMain.style.display = 'none';        // убираем модалку
+aRegister.addEventListener('click', () => {     
+    backgroundModal.style.display = 'flex';     
+    registerMain.style.display = 'flex';                 
+    loginMain.style.display = 'none';          
 });
-backgroundModal.addEventListener('click', () => {  // клик на фон модалки регистрации
-    backgroundModal.style.display = 'none';        // убираем фон модалки регистрации
-    registerMain.style.display = 'none';           // убираем модалку регистрации
+
+// закрываем модалку регистрации //
+btnClose.addEventListener('click', () => {      
+    backgroundModal.style.display = 'none';     
+    registerMain.style.display = 'none';       
 });
-aRegister.addEventListener('click', () => {     // клик по ссылке в модалке логин
-    backgroundModal.style.display = 'flex';     // открываем фон модалки регистрации
-    registerMain.style.display = 'flex';        // открываем модалку регистрации           
-    loginMain.style.display = 'none';           // убираем модалку логин
+backgroundModal.addEventListener('click', () => {  
+    backgroundModal.style.display = 'none';        
+    registerMain.style.display = 'none';           
 });
 
 // Регистрация пользователя //
+
 const buttonSubmitRegister = document.querySelector('.register_form_button'); 
 const inputFirstName = document.querySelector('.first_Name');                 
 const inputLastName = document.querySelector('.last_Name');                   
@@ -339,7 +350,7 @@ let ofTextSvg = document.querySelector('.svg_prof_text');
 let nav = document.querySelector('.nav-links');
 let counter = 0;
 
-// купленные книги ( название и автор) вызываем из ЛС //
+// купленные книги (название и автор) вызываем из ЛС //
 const booksNameAndAutorBuy = JSON.parse(localStorage.getItem('if-library:BooksAndAutor')) || [];
 
 // функция добавления Li //
@@ -353,11 +364,8 @@ function getListConten() {
 // функция добавления автора и названия книги в модалку My Profile //
 function addTitleBuyBooks() { 
     for ( let i = 0; i < booksNameAndAutorBuy.length; i++){
-        if (booksNameAndAutorBuy.length > 2) {
-            linkBooksName.classList.add('scroll_modal'); 
-    };
-    linkBooksName.append(getListConten());
-    itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
+        linkBooksName.append(getListConten());
+        itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
     };
 };
 
@@ -378,11 +386,11 @@ function counterVisits () {
 
 // функция изменения секции Либрари кард //
 function changeSection () {
-   infoProfileSectionLibraryCard.style.display = 'none';        // убираем старую информацию и кнопки справа
-   newInfoProfileSectionLibraryCard.style.display = 'block';    // добавляем новую информацию и кнопку справа
-   formTitleSectionLibraryCard.innerHTML = 'Your Library card'; // меняем заголовок формы
-   btnLibCard.style.display = 'none';                           // скрываем кнопку                         
-   iconsBlock.style.display = 'flex';                           // показываем иконки
+   infoProfileSectionLibraryCard.style.display = 'none';        
+   newInfoProfileSectionLibraryCard.style.display = 'block';    
+   formTitleSectionLibraryCard.innerHTML = 'Your Library card'; 
+   btnLibCard.style.display = 'none';                                                 
+   iconsBlock.style.display = 'flex';                           
    inpCardName.setAttribute('disabled', 'dicabled');
    inpCardName.style.backgroundColor = 'white';
    inpCardNumber.setAttribute('disabled', 'dicabled');
@@ -391,18 +399,20 @@ function changeSection () {
 
 // регистрируем пользователя //
 
-buttonSubmitRegister.addEventListener('click', (g) => {    // клик на кнопку sung up 
+buttonSubmitRegister.addEventListener('click', (g) => {    
     
     g.stopPropagation();
     g.preventDefault();
+
+    // чистим ЛС от предыдущих записей //
     localStorage.clear();
 
-    let firstNameVal = inputFirstName.value;                // значение внесенного текста в инпут Имя 
-    let lastNameVal = inputLastName.value;                  // значение внесенного текста в инпут Фамилия
-    let EmailVal = inputEmail.value;                        // значение внесенного текста в инпут Емаил
-    let passwordVal = inputPassword.value;                  // значение внесенного текста в инпут Пароль
+    let firstNameVal = inputFirstName.value;                
+    let lastNameVal = inputLastName.value;                  
+    let EmailVal = inputEmail.value;                        
+    let passwordVal = inputPassword.value;                  
 
-    // Проверка заполнения импутов Имя и Фамилия
+    // Проверка заполнения импутов Имя и Фамилия  //
     checkFillInput(firstNameVal, inputFirstName);           
     checkFillInput(lastNameVal, inputLastName);             
 
@@ -437,18 +447,20 @@ buttonSubmitRegister.addEventListener('click', (g) => {    // клик на кн
     let firstNameLoc = firstNameVal[0].toUpperCase() + firstNameVal.slice(1);   
     let lastNameLoc = lastNameVal[0].toUpperCase() + lastNameVal.slice(1);      
     
+    // если все поля заполнены верноб закрываем модалку регистрации
     if (passwordVal.length >= 8 && firstNameVal !== '' && lastNameVal !== ''&& valideEmail(EmailVal) ) {
         counterVisits()
         changeSection()
-        backgroundModal.style.display = 'none';     // убираем фон модалки 
-        registerMain.style.display = 'none';        // убираем модалку регистрации 
-        btnProfile.style.display = 'none';          // скрываем иконку профиля до регистрации
-        btnProfile2.style.display = 'none';         // скрываем доп.кпопку до регистрации
-        imgProf.style.display = 'block';            // открываем иконку профиля после регистрации
-        imgProf.style.zIndex = '3';                 // подымаем иконку 
-        nav.style.marginRight = '30px';             // отодвигаем навигацию от иконки
+        backgroundModal.style.display = 'none';      
+        registerMain.style.display = 'none';        
+        btnProfile.style.display = 'none';          
+        btnProfile2.style.display = 'none';         
+        imgProf.style.display = 'block';            
+        imgProf.style.zIndex = '3';                 
+        nav.style.marginRight = '30px';             
     }; 
-
+ 
+    // отправка данных в ЛС//
     localStorage.setItem('if-library:UserName', firstNameLoc);           // отправка значения интупа Имя в хранилище 
     localStorage.setItem('if-library:lastName', lastNameLoc);            // отправка значения инпута Фамилия в хранилище
     localStorage.setItem('if-library:email', EmailVal);                  // отправка значения инпута Емаил в хранилище
@@ -465,10 +477,10 @@ buttonSubmitRegister.addEventListener('click', (g) => {    // клик на кн
         cardNumber += randomValue;
     };
 
-    // отправка значения карты в хранилище //
+    // отправка значения карты в ЛС //
     localStorage.setItem('if-library:cardNumber', cardNumber);             
  
-    // вызов значений из хранилища //
+    // вызов значений из ЛС //
     let localItemName = localStorage.getItem('if-library:UserName');        
     let localItemLastName = localStorage.getItem('if-library:lastName');    
     let localItemNumberCard = localStorage.getItem('if-library:cardNumber');  
@@ -483,9 +495,11 @@ buttonSubmitRegister.addEventListener('click', (g) => {    // клик на кн
   
     // имя и фамилия в модалке My Profile //
     textNameModalMyProfile.innerHTML = localItemName + ' ' + localItemLastName;
-
+    
+    //имя и фамилия в инпуте в секции Либрари Кард //
     inpCardName.value = localItemName + ' ' + localItemLastName;
 
+    //номер карты в инпуте в секции Либрари Кард //
     inpCardNumber.value = localItemNumberCard;
     
     // атрибут титле к иконке профиля //
@@ -497,105 +511,122 @@ buttonSubmitRegister.addEventListener('click', (g) => {    // клик на кн
     // номер карты в модалке My Profile //
     numberCardModalMyProfile.innerHTML = localItemNumberCard; 
     
-    // количество визитов в модалке My Profile
+    // количество визитов в модалке My Profile //
     numberOfSessionsMyProfile.innerHTML = localItemNumberVisits;
 
-    // количество визитов в секции Library Card //
+    // количество визитов в секции Library Card // 
     numberSessionsLibraryCard.innerHTML = localItemNumberVisits;
 
-    numberBooksMyProfile.innerHTML = lsButtonsBuy.length
-    numberBooksLibraryCard.innerHTML = lsButtonsBuy.length
+    // количество книг в модалке My Profile //
+    numberBooksMyProfile.innerHTML = lsButtonsBuy.length;
 
-    imgProf.addEventListener('click', () => {       // клик на иконку профиля после регистрации
-        menuProfRegister.style.display = 'block';   // открывает меню профиля
+    // количество книг в секции Library Card //
+    numberBooksLibraryCard.innerHTML = lsButtonsBuy.length;
+    
+    // открыть меню профиля2 ///
+    imgProf.addEventListener('click', () => {       
+        menuProfRegister.style.display = 'block';   
         header.classList.remove('open'); 
         imgProf2.style.display = 'block';
         imgProf2.style.zIndex = '4';                                    
     });
-    imgProf2.addEventListener('click', () => {      // клик по доп.кнопки иконки профиля после регистрации
-        header.classList.remove('open');            // скрываем меню профиля 
+    imgProf2.addEventListener('click', () => {      
+        header.classList.remove('open');            
         menuProfRegister.style.display = 'none';
         imgProf2.style.display = 'none';
         imgProf2.style.zIndex = '1';                                           
     });
-    main.addEventListener('click', () => {         // закрываем меню профиля кликом на майн
+
+    // закрыть меню профиля2 //
+    main.addEventListener('click', () => {         
         menuProfRegister.style.display = 'none'; 
         imgProf2.style.display = 'none';
         imgProf2.style.zIndex = '1';                                             
     });                                             
-    header.addEventListener('click', () => {       // закрываем меню профиля кликом на хедер
+    header.addEventListener('click', () => {       
         menuProfRegister.style.display = 'none';
         imgProf2.style.display = 'none';     
         imgProf2.style.zIndex = '1';                  
     });
 
-    
-
+    // кнопки Buy в секции Фаворитс //
     btnBuyAll.forEach((elem) => {  
-        const arr = Array.prototype.slice.call(btnBuyAll);                 
+        const arr = Array.prototype.slice.call(btnBuyAll);             
+        const arrAutors = Array.prototype.slice.call(titleAutorBooks);
+        const arrNames = Array.prototype.slice.call(titleNameBooks);   
+
         elem.addEventListener('click', () => { 
-            if (localItemNumberVisits === '1') {    // клик по любой кнопки Buy в секции фаворит
+            if (localItemNumberVisits === '1') {    
                 backgroundModal.style.display = 'flex';
-                modalByCard.style.display = 'block';    // открываем фон модалки логин
-                loginMain.style.display = 'none';      // открываем модалку логин
-                startMenu.style.display = 'none';      // закрываем меню профиля
+                modalByCard.style.display = 'block';    
+                loginMain.style.display = 'none';      
+                startMenu.style.display = 'none';      
+            };
+            if (lsButtonsBuy.includes(arr.indexOf(elem))) {
+                elem.innerHTML = 'Own';
+                elem.classList.add('favorites_btm_own');
+                elem.style.pointerEvents = 'none';  
             };
             if (localStorage.getItem('if-library:Library Card') === 'Buy') {
-                backgroundModal.style.display = 'none';                      // то закрываем модалку Покупки абонемента
+                backgroundModal.style.display = 'none';                     
                 modalByCard.style.display = 'none';
                 loginMain.style.display = 'none';
                 elem.innerHTML = 'Own';
                 elem.classList.add('favorites_btm_own');
                 elem.style.pointerEvents = 'none';
                 lsButtonsBuy.push(arr.indexOf(elem));
-                localStorage.setItem('if-library:BooksBuy', JSON.stringify(lsButtonsBuy))// [1,2]
+                localStorage.setItem('if-library:BooksBuy', JSON.stringify(lsButtonsBuy));
                 numberBooksMyProfile.innerHTML = lsButtonsBuy.length;
-                numberBooksLibraryCard.innerHTML = lsButtonsBuy.length;
-                addTitleBuyBooks()  
+                numberBooksLibraryCard.innerHTML = lsButtonsBuy.length; 
+                booksNameAndAutorBuy.push((arrNames[arr.indexOf(elem)].innerText).toLowerCase() + ',' + arrAutors[arr.indexOf(elem)].innerText);
+                localStorage.setItem('if-library:BooksAndAutor', JSON.stringify(booksNameAndAutorBuy)); 
             }; 
         });
     });
 });     
 
-// Modal Login //
+// Модалка Login //
     
-const btnLogin = document.querySelector('.btn_login');                   // кнопка логин в меню профиля до авторизации
-const btnLogin2 = document.querySelector('.loginLC');                    // кнопка log In в секциии Либрари Кард
-const loginRegister = document.querySelector('.login_register');         // кнопка Логин в модалке регистер
-const btnCloseModLogin = document.querySelector('.login_button_close');  // кнопка-крестик в модалке логин
-const loginMain = document.querySelector('.modal_login');                // модалка логин
-const btnBuyAll = document.querySelectorAll('.favorites_btm_book');        // все кнопки Buy в секции Фаворитс
+const btnLogin = document.querySelector('.btn_login');                   
+const btnLogin2 = document.querySelector('.loginLC');                    
+const loginRegister = document.querySelector('.login_register');         
+const btnCloseModLogin = document.querySelector('.login_button_close');  
+const loginMain = document.querySelector('.modal_login');                
+const btnBuyAll = document.querySelectorAll('.favorites_btm_book');        
 const titleAutorBooks = document.querySelectorAll('.favorites_name_author');
-const titleNameBooks = document.querySelectorAll('.favorites_name_book')
+const titleNameBooks = document.querySelectorAll('.favorites_name_book');
 
-btnLogin.addEventListener('click', () => {      // клик на кнопку в меню профиля
-    backgroundModal.style.display = 'flex';     // открываем фон модалки логин
-    loginMain.style.display = 'flex';           // открываем модалку логин
-    startMenu.style.display = 'none';           // закрываем меню профил
+// открыть модалку Логин //
+btnLogin.addEventListener('click', () => {      
+    backgroundModal.style.display = 'flex';     
+    loginMain.style.display = 'flex';           
+    startMenu.style.display = 'none';           
 });
-btnLogin2.addEventListener('click', () => {     // клик на кнопку в секции Либрари кард
-    backgroundModal.style.display = 'flex';     // открываем фон модалки логин
-    loginMain.style.display = 'flex';           // открываем модалку логин
-    startMenu.style.display = 'none';           // закрываем меню профил
+btnLogin2.addEventListener('click', () => {     
+    backgroundModal.style.display = 'flex';     
+    loginMain.style.display = 'flex';           
+    startMenu.style.display = 'none';           
 });
-loginRegister.addEventListener('click', () => { // клик по ссылке Логин в модалке регистрации
-    registerMain.style.display = 'none';        // убираем модалку регистрации
-    loginMain.style.display = 'flex';           // открываем модалку логин
+loginRegister.addEventListener('click', () => { 
+    registerMain.style.display = 'none';        
+    loginMain.style.display = 'flex';           
 });
 btnBuyAll.forEach((elem) => {                   
-    elem.addEventListener('click', () => {      // клик по любой кнопки Buy в секции фаворит
-        backgroundModal.style.display = 'flex'; // открываем фон модалки логин
-        loginMain.style.display = 'flex';       // открываем модалку логин
-        startMenu.style.display = 'none';       // закрываем меню профиля
+    elem.addEventListener('click', () => {      
+        backgroundModal.style.display = 'flex'; 
+        loginMain.style.display = 'flex';       
+        startMenu.style.display = 'none';       
      });
 });
-btnCloseModLogin.addEventListener('click', () => {  // клик на кнопку-крестик в модалке логин
-    backgroundModal.style.display = 'none';               // убираем фон модалку логин
-    loginMain.style.display = 'none';               // убираем модалку логин
+
+// закрыть модалку Логин //
+btnCloseModLogin.addEventListener('click', () => {  
+    backgroundModal.style.display = 'none';               
+    loginMain.style.display = 'none';               
 });
-backgroundModal.addEventListener('click', () => {     // клик по фону модалки логин
-    backgroundModal.style.display = 'none';           // убираем фон  модалки логин
-    loginMain.style.display = 'none';           // убираем модалку логин
+backgroundModal.addEventListener('click', () => {     
+    backgroundModal.style.display = 'none';           
+    loginMain.style.display = 'none';           
 });
 
 // авторизируем пользователя//
@@ -606,10 +637,10 @@ const labelModalLoginPassword = document.querySelector('.modalLog_lbl_password')
 const inpLoginMail = document.querySelector('.login_email');          
 const inpLoginPassword = document.querySelector('.login_password');
 const textAvatarModalMyProfile = document.querySelector('.modalMyProfile_avatar__text');
-const textNameModalMyProfile = document.querySelector('.modalMyProfile_name__text')
-const modalByCard = document.querySelector('.modal_buyCard')
-const numberOfSessionsMyProfile = document.querySelector('.modal-MyProfile_numberSessions')
-const numberBooksMyProfile = document.querySelector('.modal-MyProfile_numberBooks')
+const textNameModalMyProfile = document.querySelector('.modalMyProfile_name__text');
+const modalByCard = document.querySelector('.modal_buyCard');
+const numberOfSessionsMyProfile = document.querySelector('.modal-MyProfile_numberSessions');
+const numberBooksMyProfile = document.querySelector('.modal-MyProfile_numberBooks');
 
 
 btnSubmitLogin.addEventListener ('click', (e) => {  
@@ -617,14 +648,16 @@ btnSubmitLogin.addEventListener ('click', (e) => {
     e.stopPropagation();
     e.preventDefault();
 
+    let inpModalLogMailVal = inpLoginMail.value;
+    let inpModalLogPasswordVal = inpLoginPassword.value;
+ 
+    // вызов значений из ЛС //
     let localItemName = localStorage.getItem('if-library:UserName');         
     let localItemEmail = localStorage.getItem('if-library:email');           
     let localItemPassword = localStorage.getItem('if-library:password');     
     let localItemLastName = localStorage.getItem('if-library:lastName');     
     let localItemNumderCard = localStorage.getItem('if-library:cardNumber');
     let localItemNumberVisits = localStorage.getItem('if-library:numberOfSessions');
-    let inpModalLogMailVal = inpLoginMail.value;
-    let inpModalLogPasswordVal = inpLoginPassword.value;
     let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || []
     
     // проверка инпутов на пустоту//
@@ -661,7 +694,7 @@ btnSubmitLogin.addEventListener ('click', (e) => {
         inpLoginPassword.style.borderColor = '#BB945F';
     };
 
-    // проверка на совпадение с локал сторедж (если нет совпадений)//
+    // проверка на совпадение с ЛС (емаил и пароль) (если нет совпадений)//
     if (inpModalLogMailVal !== localItemEmail) {
         inpLoginMail.style.borderColor = 'red';
         labelModalLoginEmail.setAttribute('title', 'This email is not registered');
@@ -671,7 +704,7 @@ btnSubmitLogin.addEventListener ('click', (e) => {
         labelModalLoginPassword.setAttribute('title', "The password doesn't match. Try again");   
     };
     
-    // проверка на совпадение с локал сторедж (если все совпало)//
+    // проверка на совпадение с ЛС (емаил и пароль)(если все совпало)//
     if (inpModalLogMailVal === localItemEmail && inpModalLogPasswordVal === localItemPassword) {
         nextVisits();
         changeSection();
@@ -693,6 +726,12 @@ btnSubmitLogin.addEventListener ('click', (e) => {
     // атрибут титле к иконке профиля, из имени и фамилии //
     titleProf.innerHTML = localItemName + ' ' + localItemLastName;   
 
+    //имя и фамилия в инпуте в секции Либрари Кард //
+    inpCardName.value = localItemName + ' ' + localItemLastName;
+
+    //номер карты в инпуте в секции Либрари Кард //
+    inpCardNumber.value = localItemNumberCard;
+
     // имя и фамилия в модалке My Profile //
     textNameModalMyProfile.innerHTML = localItemName + ' ' + localItemLastName;
     
@@ -702,44 +741,47 @@ btnSubmitLogin.addEventListener ('click', (e) => {
     // количество визитов в модалке My Profile //
     numberOfSessionsMyProfile.innerHTML = localStorage.getItem('if-library:numberOfSessions');
 
-     // количество визитов в секции Library Card //
+    // количество визитов в секции Library Card //
     numberSessionsLibraryCard.innerHTML = localStorage.getItem('if-library:numberOfSessions');
 
-    
+    // количество книг в модалке My Profile //
     numberBooksMyProfile.innerHTML = lsButtonsBuy.length;
 
+    // количество визитов в секции Library Card //
     numberBooksLibraryCard.innerHTML = lsButtonsBuy.length; 
 
-    imgProf.addEventListener('click', () => {       // клик на иконку профиля после регистрации ( открываем меню профиля)
+    // открыть меню профиля2 //
+    imgProf.addEventListener('click', () => {       
         menuProfRegister.style.display = 'block';   
         header.classList.remove('open'); 
         imgProf2.style.display = 'block';
         imgProf2.style.zIndex = '4';                                    
     });
-    imgProf2.addEventListener('click', () => {      // клик по доп.кнопки иконки профиля пocле регистрации (закрываем меню профиля)
+    imgProf2.addEventListener('click', () => {      
         header.classList.remove('open');            
         menuProfRegister.style.display = 'none';
         imgProf2.style.display = 'none';
         imgProf2.style.zIndex = '1';                               
     });
-    main.addEventListener('click', () => {        // закрываем меню профиля кликом на майн
+
+    // закрыть меню профиля2 //
+    main.addEventListener('click', () => {        
         menuProfRegister.style.display = 'none'; 
         imgProf2.style.display = 'none';
         imgProf2.style.zIndex = '1';                                             
     });                                             
-    header.addEventListener('click', () => {      // закрываем меню профиля кликом на хедер 
+    header.addEventListener('click', () => {      
         menuProfRegister.style.display = 'none';
         imgProf2.style.display = 'none';    
         imgProf2.style.zIndex = '1';                  
     });
     
 
-
     // кнопки бай в секции Фаворитс //
     btnBuyAll.forEach((elem) => {
-        const arr = Array.prototype.slice.call(btnBuyAll);             // массив кнопок Buy
-        const arrAutors = Array.prototype.slice.call(titleAutorBooks); // массив Авторов книг
-        const arrNames = Array.prototype.slice.call(titleNameBooks);   // массив названия книг
+        const arr = Array.prototype.slice.call(btnBuyAll);             
+        const arrAutors = Array.prototype.slice.call(titleAutorBooks); 
+        const arrNames = Array.prototype.slice.call(titleNameBooks);   
         
         if (lsButtonsBuy.includes(arr.indexOf(elem))) {
             elem.innerHTML = 'Own';
@@ -759,9 +801,8 @@ btnSubmitLogin.addEventListener ('click', (e) => {
                 localStorage.setItem('if-library:BooksBuy', JSON.stringify(lsButtonsBuy));
                 numberBooksMyProfile.innerHTML = lsButtonsBuy.length;
                 numberBooksLibraryCard.innerHTML = lsButtonsBuy.length;
-                booksNameAndAutorBuy.push(arrNames[arr.indexOf(elem)].innerText + ',' + arrAutors[arr.indexOf(elem)].innerText);
+                booksNameAndAutorBuy.push((arrNames[arr.indexOf(elem)].innerText).toLowerCase() + ',' + arrAutors[arr.indexOf(elem)].innerText);
                 localStorage.setItem('if-library:BooksAndAutor', JSON.stringify(booksNameAndAutorBuy));
-                addTitleBuyBooks();
             } 
             else {
                 backgroundModal.style.display = 'flex'; 
@@ -771,14 +812,33 @@ btnSubmitLogin.addEventListener ('click', (e) => {
         });
     });
 
-})
-// Модальное окно My Profile //
+});
+
+
+// Модалка My Profile //
 const btnMyProfileMenuProf = document.querySelector('.dropMenu_myProfile_btn');
 const btnCloseModalMyProfile = document.querySelector('.modal_profile_btn_close');
 const modalMyProfile = document.querySelector('.modal-MyProfile');
 const btnCopyCardModalMyProfile = document.querySelector('.modalProfile_iconCopy');
 const btnProfileSectionlibraryCard = document.querySelector('.librarycard_request_btm-Profile');
 
+// функция добавления Li //
+function getListConten() { 
+    const li = document.createElement('li');
+        li.className = 'some class';
+        li.classList.add('profile_books__item');
+        return li;
+};
+
+// функция добавления автора и названия книги в модалку My Profile //
+function addTitleBuyBooks() { 
+    for ( let i = 0; i < booksNameAndAutorBuy.length; i++){
+        linkBooksName.append(getListConten());
+        itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
+    };
+};
+
+// открыть модалку Мой Профиль //
 btnMyProfileMenuProf.addEventListener('click', () => {
     modalMyProfile.style.display = 'flex';
     backgroundModal.style.display = 'flex';
@@ -788,7 +848,10 @@ btnMyProfileMenuProf.addEventListener('click', () => {
 btnProfileSectionlibraryCard.addEventListener('click', () => {
     modalMyProfile.style.display = 'flex';
     backgroundModal.style.display = 'flex';
+    addTitleBuyBooks();
 });
+
+// закрыть модалку Мой Профиль //
 btnCloseModalMyProfile.addEventListener('click', () => {
     modalMyProfile.style.display = 'none';
     backgroundModal.style.display = 'none';
@@ -806,11 +869,12 @@ btnCopyCardModalMyProfile.onclick = function copyText() {
       btnCopyCardModalMyProfile.title = "The card number has been copied";
 };
 
-// Модальное окно Buy a Library Card //
+
+// Модалка Buy a Library Card //
 
 const btnCloseModalBuyCard = document.querySelector('.modal_buyCard_button__close');
 
-// закрытие модалки //
+// закрыть модалку Buy a Library Card //
 btnCloseModalBuyCard.addEventListener('click', () => {
     modalByCard.style.display = 'none';
     backgroundModal.style.display = 'none';
@@ -834,13 +898,14 @@ const inpCityTowerModalBuyCard = document.querySelector('.input-cityTown');
 const btnBuyModalBuyCard = document.querySelector('.modal_buyCard_button-buy');
 const labelNumberCardModalBuyCard = document.querySelector('.label-bankCardNumder');     
 const labelExpNodeModalByCard = document.querySelector('.label-expirationode');
-const labelCVCModalByCard = document.querySelector('.label-CVC')
+const labelCVCModalByCard = document.querySelector('.label-CVC');
 
 btnBuyModalBuyCard.addEventListener('click', (k) => {
 
     k.stopPropagation();
     k.preventDefault();
-
+    
+    // проверка всех инпутов на пустоту //
     checkFillInput(inpNumberCardModalBuyCard.value, inpNumberCardModalBuyCard);
     checkFillInput(inpLeftExpNodeModalBuyCard.value, inpLeftExpNodeModalBuyCard);
     checkFillInput(inpRightExpNodeModalBuyCard.value, inpRightExpNodeModalBuyCard);
@@ -850,7 +915,6 @@ btnBuyModalBuyCard.addEventListener('click', (k) => {
     checkFillInput(inpCityTowerModalBuyCard.value, inpCityTowerModalBuyCard);
 
     // валидация импута номер карты //
-    
     if (inpNumberCardModalBuyCard.value.length > 19 || inpNumberCardModalBuyCard.value.length < 19) {
         inpNumberCardModalBuyCard.style.borderColor = 'red';
         labelNumberCardModalBuyCard.title = 'Please enter the card number in the format: 0000 0000 0000 0000';
@@ -861,7 +925,6 @@ btnBuyModalBuyCard.addEventListener('click', (k) => {
     };
     
     // длина импутов срок действия карты //
-
     if (inpLeftExpNodeModalBuyCard.value.length > 2 || inpLeftExpNodeModalBuyCard.value.length < 2 ) {
         inpLeftExpNodeModalBuyCard.style.borderColor = 'red';
         labelExpNodeModalByCard.title = 'This field must contain 2 digits';
@@ -876,11 +939,11 @@ btnBuyModalBuyCard.addEventListener('click', (k) => {
     };
     
     // длина инпута CVC //
-    
     if (inpCVCModalBuyCard.value.length > 3 || inpCVCModalBuyCard.value.length < 3) {
         inpCVCModalBuyCard.style.borderColor = 'red';
         labelCVCModalByCard.title = 'This field must contain 3 digits';
-    } else if (inpCVCModalBuyCard.value.length === 3) {
+    } 
+    else if (inpCVCModalBuyCard.value.length === 3) {
         inpCVCModalBuyCard.style.borderColor = '#BB945F';
         labelCVCModalByCard.title = 'Thank you. The field is filled in correctly';
     };
@@ -893,6 +956,7 @@ btnBuyModalBuyCard.addEventListener('click', (k) => {
             backgroundModal.style.display = 'none';
             modalByCard.style.display = 'none';
         };
+
     // заносим данные о покупле в LS //
     localStorage.setItem('if-library:Library Card', 'Buy');
 });

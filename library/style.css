@@ -749,22 +749,23 @@
 }
 .modal_profile_books_link{
   width: 362px;
-  height: 50px;
+  height: 66px;
   margin: 0px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 10px;
+  overflow: auto;
 }
 .scroll_modal{
   overflow: auto;
 }
-.scroll_modal::-webkit-scrollbar {
+.modal_profile_books_link::-webkit-scrollbar {
   height: 4px;
   width: 4px;               /* ширина scrollbar */
 }
-.scroll_modal::-webkit-scrollbar-track {
+.modal_profile_books_link::-webkit-scrollbar-track {
   background: #BB945F;        /* цвет дорожки */
 }
-.scroll_modal::-webkit-scrollbar-thumb {
+.modal_profile_books_link::-webkit-scrollbar-thumb {
   background-color: #0C0C0E;    /* цвет плашки */
   border-radius: 20px;       /* закругления плашки */
   
