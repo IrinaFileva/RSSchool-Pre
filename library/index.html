@@ -26,7 +26,9 @@
             <li><a href="#librarycard" class="a-nav" id="i">Library Card</a></li>
           </ul>
         </nav>
-        <img class="img1" src="assets/icons/icon_profile.svg" alt="Icon Profile">
+        <svg class="img1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
+        </svg>
         <div class="burger_main" id="burger">
           <span class="burger_line1"></span>
           <span class="burger_line2"></span>
@@ -35,6 +37,173 @@
       </div>
     </div>
   </header>
+    
+  <div class="profile_div"></div>
+  <div class="profile_div2"></div>
+
+  <div class="dropMenu dm_noAuth">
+    <p class="dm_h">Profile</p>
+      <p class="btn_login dm_text">Log In</p>
+      <p class="btn_reg dm_text">Register</p>
+  </div>
+
+  <div class="modal_background"></div>
+
+  <div class="modal_register">
+    <p class="register_name">Register</p>
+    <svg class="register_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+      <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+      <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+    </svg>
+    <form class="register_form" id="form">
+      <label class="register_form_label modalReg_label_name">First name
+        <input class="register_form_input first_Name" type="text" name="Name" required>
+      </label>
+      <label class="register_form_label modalReg_label_lastname">Last name
+        <input class="register_form_input last_Name" type="text" name="LastName" required>
+      </label>
+      <label class="register_form_label modalReg_label_email">E-mail
+        <input class="register_form_input email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
+      </label>
+      <label class="register_form_label modalReg_label_password">Password
+        <input class="register_form_input password" type="password" name="password" minlength="8" required>
+      </label>
+    </form>
+    <button class="register_form_button" type="button">Sign Up</button>
+    <div class="register_text_a">
+      <p class="register_text">Already have an account?</p>
+      <a class="register_a login_register">Login</a>
+    </div>
+  </div>
+
+  <div class="modal_login">
+        <p class="login_name">Login</p>
+        <svg class="login_button_close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+        </svg>
+        <form class="login_form">
+          <label class="login_form_label modalLog_lbl_email">E-mail or readers card
+            <input class="login_form_input login_email" type="e_mail" name="email" required pattern="\S+@[a-z]+.[a-z]+">
+          </label>
+          <label class="login_form_label modalLog_lbl_password">Password
+            <input class="login_form_input login_password" type="password" name="password" minlength="8" required>
+          </label>
+          <button class="login_form_button" type="button">Log In</button>
+        </form>
+        <div class="register_text_a">
+          <p class="register_text">Don’t have an account?</p>
+          <a class="register_a login_a">Register</a>
+        </div>
+      </div>
+    
+    <svg class="img_prof" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14Z" fill="white"/>
+      <text class="svg_prof_text" x="50%" y="70%"></text>
+      <title class="prof_title-text"></title>
+    </svg>
+
+    <div class="dropMenu dm_withAuth">
+      <p class="dm_h text_number_card"></p>
+        <p class="dm_text dropMenu_myProfile_btn">My profile</p>
+        <p class="dm_text btn-LogOut">Log Out</p>
+    </div>
+
+      <div class="modal-MyProfile">
+        <div class="modal_profile_left">
+          <p class="modalMyProfile_avatar__text"></p>
+          <p class="modalMyProfile_name__text"></p>
+        </div> 
+        <div class="modal_profile_right">
+          <h2 class="modal_profile_h">My profile</h2>
+          <svg class="modal_profile_btn_close"xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M2 16.8507L17 2.00001" stroke="#0C0C0E" stroke-width="3"/>
+            <path d="M2 2.14928L17 17" stroke="#0C0C0E" stroke-width="3"/>
+          </svg>
+          <div class="modal_profile_icons">
+            <div class="icons_div">
+              <p class="icons_text">Visits</p>
+              <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+              </svg>
+              <p class="icons_number modal-MyProfile_numberSessions">0</p>
+            </div>
+            <div class="icons_div">
+              <p class="icons_text">Bonuses</p>
+              <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+              </svg>
+              <p class="icons_number">1240</p>
+            </div>
+            <div class="icons_div">
+              <p class="icons_text">Books</p>
+              <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <rect width="20" height="21" fill="#BB945F"/>
+                <rect x="2" width="1" height="19" fill="#826844"/>
+                <rect x="1" width="1" height="21" fill="white"/>
+              </svg>
+              <p class="icons_number modal-MyProfile_numberBooks">0</p>
+            </div>
+          </div>
+          <p class="modal_profile_p">Rented books</p>
+            <ul class="modal_profile_books_link"></ul>
+          <div class="modalProfile_div__cardNumber">
+            <p class="modalProfile_cardNumber">Card number</p>
+            <p class="modalProfile_cardNumber_linkCard">F00234030</p>
+            <svg class="modalProfile_iconCopy" title="copy"  xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+              <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
+              <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
+              <title class="btn_clipboard_title">Copy Clipboard</title>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal_buyCard">
+      <div class="modal_buyCard_header">
+        <h3 class="modal_buyCard_heading">Buy a library card</h3>
+        <svg class="modal_buyCard_button__close" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+          <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="modal_buyCard_main">
+      <div class="modal_buyCard_leftSide">
+        <label class="modal_buyCard_label label-bankCardNumder">Bank card number
+         <input class="modal_buyCard_input__max input-bankCardNumder" maxlength="19" type="text">
+        </label>
+        <label class="modal_buyCard_label label-expirationode">Expiration code
+          <input class="modal_buyCard_input__mini input-expirationode_left" max="2" type="number" >
+          <input class="modal_buyCard_input__mini input-expirationode_right" max="2" type="number">
+        </label>
+        <label class="modal_buyCard_label label-CVC">CVC
+          <input class="modal_buyCard_input__mini input-CVC" type="number" max="3">
+        </label>
+        <label class="modal_buyCard_label label-cardholderName">Cardholder name  
+          <input class="modal_buyCard_input__max input-cardholderName">
+        </label>
+        <label class="modal_buyCard_label label-postalCode">Postal code
+          <input class="modal_buyCard_input__max input-postalCode" type="number">
+        </label>
+        <label class="modal_buyCard_label label-cityTown">City / Town
+          <input class="modal_buyCard_input__max input-cityTown">
+        </label>
+        <div class="modal_buyCard_block-buttonPrice">
+          <button class="modal_buyCard_button-buy" type="button">Buy</button>
+          <p class="modal_buyCard_price">$ 25.00</p>
+        </div>
+      </div>
+      <p class="modal_buyCard_rightText">
+        If you are live, work, attend school, or pay property taxes in New York State, 
+        you can get a $25 digital library card right now using this online form. 
+        Visitors to New York State can also use this form to apply for a temporary card.
+      </p>
+    </div>
+    </div>
+
+    
+  
 
   <main class="main">
     <section class="welcome">
@@ -48,29 +217,41 @@
         <h2 class="all_hd">About</h2>
           <p class="p-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
           <div class="image_about">
-            <img class="about_carret" src="assets/icons/Carret_Left.svg" alt="carret_left">
-            <img class="photo_about about_foto1" src="assets/img/image1.jpg" alt="image1">
-            <img class="photo_about about_foto2" src="assets/img/image2.jpg" alt="image2">
-            <img class="photo_about about_foto3" src="assets/img/image3.jpg" alt="image3">
-            <img class="photo_about about_foto4" src="assets/img/image4.jpg" alt="image4">
-            <img class="photo_about about_foto5" src="assets/img/image5.jpg" alt="image5">
-            <img class="about_carret" src="assets/icons/Carret_Right.svg" alt="carret_right">
+            <button class="about_carret carret_left">
+              <svg class="svg_carret" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M15 7.5L9 12.5L15 17.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+              <div class="slider_photo">
+                <div class="slider_wrapper wrapper__mini">
+                  <img class="photo_about about_foto1" id="ph1" src="assets/img/image1.jpg" alt="image1">
+                  <img class="photo_about about_foto2" id="ph2" src="assets/img/image2.jpg" alt="image2">
+                  <img class="photo_about about_foto3" id="ph3" src="assets/img/image3.jpg" alt="image3">
+                  <img class="photo_about about_foto4" id="ph4" src="assets/img/image4.jpg" alt="image4">
+                  <img class="photo_about about_foto5" id="ph5" src="assets/img/image5.jpg" alt="image5">
+                </div>
+              </div>
+            <button class="about_carret carret_right">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="11" viewBox="0 0 8 11" fill="none">
+                <path d="M1 10.5L7 5.5L1 0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
           <div class="about__btn">
             <div class="about__btn_frame">
-              <button class="about_btn__inside_active"></button>
+              <button class="about_btn__inside btn1 active"></button>
             </div>
             <div class="about__btn_frame">
-              <button class="about_btn__inside"></button>
+              <button class="about_btn__inside btn2"></button>
             </div>
             <div class="about__btn_frame">
-              <button class="about_btn__inside"></button>
+              <button class="about_btn__inside btn3"></button>
             </div>
             <div class="about__btn_frame btn-none1">
-              <button class="about_btn__inside btn__inside_none"></button>
+              <button class="about_btn__inside btn__inside_none btn4"></button>
             </div>
-            <div class="about__btn_frame btn-none2">
-              <button class="about_btn__inside btn__inside_none"></button>
+            <div class="about__btn_frame btn-none2 ">
+              <button class="about_btn__inside btn__inside_none btn5"></button>
             </div>
           </div>
         </div>
@@ -79,13 +260,14 @@
     <section class="favorites" id="favorites">
         <div class="container">
           <h2 class="all_hd">Favorites</h2>
-          <p class="favorites_txt">Pick favorites of season</p>
         </div>
+        <div class="favorites_sticky">
+        <p class="favorites_txt">Pick favorites of season</p>
         <div class="favorites__radio">
           <span class="favorites_lbl_inp__bl">
             <label class="favorites_lbl">
               <span class="favorites_inp__block">
-                <input class="favorites_ipt" type="radio" value="winter" name="favorites" checked>
+                <input class="favorites_ipt inp_winter" type="radio" value="winter" name="favorites" checked>
               </span>
                Winter
             </label>
@@ -93,7 +275,7 @@
           <span class="favorites_lbl_inp__bl">
             <label class="favorites_lbl">
               <span class="favorites_inp__block">
-                <input class="favorites_ipt" type="radio" value="spring" name="favorites">
+                <input class="favorites_ipt inp_spring" type="radio" value="spring" name="favorites">
               </span>
               Spring
             </label>
@@ -101,7 +283,7 @@
           <span class="favorites_lbl_inp__bl">
             <label class="favorites_lbl">
               <span class="favorites_inp__block">
-                <input class="favorites_ipt" type="radio" value="summer" name="favorites">
+                <input class="favorites_ipt inp_summer" type="radio" value="summer" name="favorites">
               </span>
               Summer
             </label>
@@ -109,13 +291,120 @@
           <span class="favorites_lbl_inp__bl">
             <label class="favorites_lbl">
               <span class="favorites_inp__block">
-                <input class="favorites_ipt" type="radio" value="autumn" name="favorites">
+                <input class="favorites_ipt inp_autumn" type="radio" value="autumn" name="favorites">
               </span>
               Autumn
             </label>
           </span>
         </div>
-        <div class="books_top">
+        </div>
+
+        <div class="books_top_spring">
+          <div class="favorites_book_one">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">The Body</p>
+            <p class="favorites_name_author">By Stephen King</p>
+            <p class="favorites_info_book">Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book5.jpg" alt="The Body">
+          </div>
+          <div class="favorites_book_two">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Carry: A Memoir of Survival on Stolen Land</p>
+            <p class="favorites_name_author">By Toni Jenson</p>
+            <p class="favorites_info_book">This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book6.jpg" alt="Carry: A Memoir of Survival on Stolen Land">
+          </div>
+          <div class="favorites_book_one">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <h4 class="favorites_name_book">Days of Distraction</h4>
+            <h5 class="favorites_name_author">By Alexandra Chang</h5>
+            <p class="favorites_info_book">A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book7.jpg" alt="Days of Distraction">
+          </div>
+          <div class="favorites_book_two">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Dominicana</p>
+            <p class="favorites_name_author">By Angie Cruz</p>
+            <p class="favorites_info_book">A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book8.jpg" alt="Dominicana">
+          </div>
+        </div>
+
+        <div class="books_top_summer">
+          <div class="favorites_book_one">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Crude: A Memoir</p>
+            <p class="favorites_name_author">By Pablo Fajardo & ​​Sophie Tardy-Joubert</p>
+            <p class="favorites_info_book">Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book9.jpg" alt="Crude: A Memoir">
+          </div>
+          <div class="favorites_book_two">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Let My People Go Surfing</p>
+            <p class="favorites_name_author">By Yvon Chouinard</p>
+            <p class="favorites_info_book">Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book10.jpg" alt="Let My People Go Surfing">
+          </div>
+          <div class="favorites_book_one">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <h4 class="favorites_name_book">The Octopus Museum: Poems</h4>
+            <h5 class="favorites_name_author">By Brenda Shaughnessy</h5>
+            <p class="favorites_info_book">This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book11.jpg" alt="The Octopus Museum: Poems">
+          </div>
+          <div class="favorites_book_two">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Shark Dialogues: A Novel</p>
+            <p class="favorites_name_author">By Kiana Davenport</p>
+            <p class="favorites_info_book">An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book12.jpg" alt="Shark Dialogues: A Novel">
+          </div>
+        </div>
+
+        <div class="books_top_autumn">
+          <div class="favorites_book_one">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Casual Conversation</p>
+            <p class="favorites_name_author">By Renia White</p>
+            <p class="favorites_info_book">White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book13.jpg" alt="Casual Conversation">
+          </div>
+          <div class="favorites_book_two">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">The Great Fire</p>
+            <p class="favorites_name_author">By Lou Ureneck</p>
+            <p class="favorites_info_book">The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book14.jpg" alt="The Great Fire">
+          </div>
+          <div class="favorites_book_one">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <h4 class="favorites_name_book">Rickey: The Life and Legend</h4>
+            <h5 class="favorites_name_author">By Howard Bryant</h5>
+            <p class="favorites_info_book">With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book15.jpg" alt="Rickey: The Life and Legend">
+          </div>
+          <div class="favorites_book_two">
+            <h3 class="favorites_book__staff">Staff Picks</h3>
+            <p class="favorites_name_book">Slug: And Other Stories</p>
+            <p class="favorites_name_author">By Megan Milks</p>
+            <p class="favorites_info_book">Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.</p>
+            <button class="favorites_btm_book">Buy</button>
+            <img class="favorites_img_book" src="assets/img/book16.jpg" alt="Slug: And Other Stories">
+          </div>
+        </div>
+
+        <div class="books_top_winter">
           <div class="favorites_book_one">
             <h3 class="favorites_book__staff">Staff Picks</h3>
             <p class="favorites_name_book">The Book Eaters</p>
@@ -145,10 +434,11 @@
             <p class="favorites_name_book">The Last Queen</p>
             <p class="favorites_name_author">By Clive Irving</p>
             <p class="favorites_info_book">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-            <button disabled class="favorites_btm_own">Own</button>
+            <button class="favorites_btm_book">Buy</button>
             <img class="favorites_img_book" src="assets/img/book4.jpg" alt="The Last Queen">
           </div>
         </div>
+        
       </section>
 
       <section class="coffeeshop" id="coffeeshop">
@@ -243,13 +533,38 @@
           <div class="librarycard_allinfo">
             <div class="container_card">
               <p class="libcard_table__name">Find your Library card</p>
-              <form class="libcard_table">
+              <form class="libcard_table" id="form_libcard">
                 <div class="libcard_block">
                   <label class="libcard_table__lb">Brooklyn Public Library</label>
-                    <input class="libcard_table_inp" type="text" placeholder="Reader's name">
-                    <input class="libcard_table_inp" type="text" placeholder="Card number"> 
+                    <input class="libcard_table_inp libcard_inp_name" type="text" placeholder="Reader's name">
+                    <input class="libcard_table_inp libcard_inp_number" type="text" placeholder="Card number"> 
                 </div>
-                <button class="libcard_table_btm">Check the card</button>
+                <button class="libcard_table_btm" type="button" disabled="disabled">Check the card</button>
+                <div class="modal_profile_icons librarycard_icons">
+                  <div class="icons_div librarycard_icons__div">
+                    <p class="icons_text librarycard_icons__text">Visits</p>
+                    <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                    </svg>
+                    <p class="icons_number librarycard_icons__number visits_number">0</p>
+                  </div>
+                  <div class="icons_div librarycard_icons__div">
+                    <p class="icons_text librarycard_icons__text">Bonuses</p>
+                    <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                      <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                    </svg>
+                    <p class="icons_number librarycard_icons__number">1240</p>
+                  </div>
+                  <div class="icons_div librarycard_icons__div">
+                    <p class="icons_text librarycard_icons__text">Books</p>
+                    <svg class="icons_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                      <rect width="20" height="21" fill="#BB945F"/>
+                      <rect x="2" width="1" height="19" fill="#826844"/>
+                      <rect x="1" width="1" height="21" fill="white"/>
+                    </svg>
+                    <p class="icons_number librarycard_icons__number librarycard_number_books">0</p>
+                  </div>
+                </div>
               </form>
             </div>
             <div class="librarycard_request">
@@ -257,8 +572,13 @@
               <p class="librarycard_request__txt">You will be able to see a reader card after logging into account or you can register a new account</p>
               <div class="librarycard_request_btms">
                 <button class="librarycard_request_btm">Sign Up</button>
-                <button class="librarycard_request_btm">Log in</button>
+                <button class="librarycard_request_btm loginLC">Log in</button>
               </div>
+            </div>
+            <div class="librarycard_request librarycard_request__onRegister">
+              <p class="librarycard_request__p">Visit your profile</p>
+              <p class="librarycard_request__txt">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
+              <button class="librarycard_request_btm librarycard_request_btm-Profile">Profile</button>
             </div>
           </div>
         </div>
