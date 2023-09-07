@@ -824,6 +824,16 @@
   z-index: 50;
   background-color: #FFF;
 }
+@media(max-width: 800px){
+ .modal_buyCard{
+  left: 8%; 
+}
+}
+@media(max-width: 650px){
+  .modal_buyCard{
+    left: 0; 
+  }
+}
 .modal_buyCard_header {
   position: relative;
   display: flex;
