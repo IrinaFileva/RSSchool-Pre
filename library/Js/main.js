@@ -350,25 +350,6 @@ let ofTextSvg = document.querySelector('.svg_prof_text');
 let nav = document.querySelector('.nav-links');
 let counter = 0;
 
-// купленные книги (название и автор) вызываем из ЛС //
-const booksNameAndAutorBuy = JSON.parse(localStorage.getItem('if-library:BooksAndAutor')) || [];
-
-// функция добавления Li //
-function getListConten() { 
-    const li = document.createElement('li');
-        li.className = 'some class';
-        li.classList.add('profile_books__item');
-        return li;
-};
-
-// функция добавления автора и названия книги в модалку My Profile //
-function addTitleBuyBooks() { 
-    for ( let i = 0; i < booksNameAndAutorBuy.length; i++){
-        linkBooksName.append(getListConten());
-        itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
-    };
-};
-
 // функция проверки заполнения инпутов //
 function checkFillInput(elem, color) {             
     if (elem === '') {
@@ -486,6 +467,7 @@ buttonSubmitRegister.addEventListener('click', (g) => {
     let localItemNumberCard = localStorage.getItem('if-library:cardNumber');  
     let localItemNumberVisits = localStorage.getItem('if-library:numberOfSessions');
     let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || [];
+    const booksNameAndAutorBuy = JSON.parse(localStorage.getItem('if-library:BooksAndAutor')) || [];
     
     // заглавные буквы и иконке профиля//
     ofTextSvg.innerHTML = localItemName[0] + localItemLastName[0];   
@@ -522,7 +504,8 @@ buttonSubmitRegister.addEventListener('click', (g) => {
 
     // количество книг в секции Library Card //
     numberBooksLibraryCard.innerHTML = lsButtonsBuy.length;
-    
+
+
     // открыть меню профиля2 ///
     imgProf.addEventListener('click', () => {       
         menuProfRegister.style.display = 'block';   
@@ -658,7 +641,8 @@ btnSubmitLogin.addEventListener ('click', (e) => {
     let localItemLastName = localStorage.getItem('if-library:lastName');     
     let localItemNumderCard = localStorage.getItem('if-library:cardNumber');
     let localItemNumberVisits = localStorage.getItem('if-library:numberOfSessions');
-    let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || []
+    let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || [];
+    const booksNameAndAutorBuy = JSON.parse(localStorage.getItem('if-library:BooksAndAutor')) || [];
     
     // проверка инпутов на пустоту//
     checkFillInput(inpModalLogMailVal, inpLoginMail);               
@@ -775,7 +759,6 @@ btnSubmitLogin.addEventListener ('click', (e) => {
         imgProf2.style.display = 'none';    
         imgProf2.style.zIndex = '1';                  
     });
-    
 
     // кнопки бай в секции Фаворитс //
     btnBuyAll.forEach((elem) => {
@@ -814,41 +797,68 @@ btnSubmitLogin.addEventListener ('click', (e) => {
 
 });
 
-
 // Модалка My Profile //
 const btnMyProfileMenuProf = document.querySelector('.dropMenu_myProfile_btn');
 const btnCloseModalMyProfile = document.querySelector('.modal_profile_btn_close');
 const modalMyProfile = document.querySelector('.modal-MyProfile');
 const btnCopyCardModalMyProfile = document.querySelector('.modalProfile_iconCopy');
 const btnProfileSectionlibraryCard = document.querySelector('.librarycard_request_btm-Profile');
+const titleBtnCopyCard = document.querySelector('.btn_clipboard_title');
+
 
 // функция добавления Li //
 function getListConten() { 
     const li = document.createElement('li');
-        li.className = 'some class';
-        li.classList.add('profile_books__item');
-        return li;
+    li.className = 'some class';
+    li.classList.add('profile_books__item');
+    return li;
 };
-
-// функция добавления автора и названия книги в модалку My Profile //
-function addTitleBuyBooks() { 
-    for ( let i = 0; i < booksNameAndAutorBuy.length; i++){
-        linkBooksName.append(getListConten());
-        itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
-    };
-};
-
+    
 // открыть модалку Мой Профиль //
 btnMyProfileMenuProf.addEventListener('click', () => {
+
+    // купленные книги (название и автор) вызываем из ЛС //
+    const booksNameAndAutorBuy = JSON.parse(localStorage.getItem('if-library:BooksAndAutor')) || [];
+
+    // функция добавления автора и названия книги в модалку My Profile //
+    function addTitleBuyBooks() { 
+        for ( let i = 0; i < booksNameAndAutorBuy.length; i++){
+            if(booksNameAndAutorBuy.length === itemBoobsNameInLink.length){
+                itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
+            } 
+            else {     
+                linkBooksName.append(getListConten());
+                itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
+            };
+        };
+    };
+
+    addTitleBuyBooks()
     modalMyProfile.style.display = 'flex';
     backgroundModal.style.display = 'flex';
     menuProfRegister.style.display = 'none';
-    addTitleBuyBooks(); 
 });
 btnProfileSectionlibraryCard.addEventListener('click', () => {
+
+    // купленные книги (название и автор) вызываем из ЛС //
+    const booksNameAndAutorBuy = JSON.parse(localStorage.getItem('if-library:BooksAndAutor')) || [];
+
+     // функция добавления автора и названия книги в модалку My Profile //
+    function addTitleBuyBooks() { 
+        for ( let i = 0; i < booksNameAndAutorBuy.length; i++){
+            if(booksNameAndAutorBuy.length === itemBoobsNameInLink.length){
+                itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
+            } 
+            else {     
+                linkBooksName.append(getListConten());
+                itemBoobsNameInLink[i].innerText = booksNameAndAutorBuy[i];
+            };
+        };
+    };
+
+    addTitleBuyBooks()
     modalMyProfile.style.display = 'flex';
     backgroundModal.style.display = 'flex';
-    addTitleBuyBooks();
 });
 
 // закрыть модалку Мой Профиль //
@@ -866,7 +876,7 @@ backgroundModal.addEventListener('click', () => {
 // кнопка буфера обмена в модалке My Profile//
 btnCopyCardModalMyProfile.onclick = function copyText() {
       navigator.clipboard.writeText(numberCardModalMyProfile.innerHTML);
-      btnCopyCardModalMyProfile.title = "The card number has been copied";
+      titleBtnCopyCard.innerHTML = "The card number has been copied";
 };
 
 
