@@ -152,7 +152,7 @@
     background-color:#0C0C0E;
     position: fixed;
     top: 0;
-    right: -332px;
+    right: -362px;
     padding: 100px 0;
     display: flex;
     flex-direction: column;
@@ -373,13 +373,14 @@
 .modal_background {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top:0;
-  z-index: 3;
+  z-index: 30;
   display: none;
   align-items: center;
   background-color: rgba(60,60,60,0.8);
   cursor: pointer;
+  margin:0;
 }
 .modal_register{
   position: fixed;
@@ -618,7 +619,7 @@
   height: 400px;
   display: none;
   position: fixed;
-  top: 150px;
+  top: 25%;
   left: 30%;
   z-index: 50;
   background-color: #FFF;
@@ -820,7 +821,7 @@
   height: 540px;
   position: fixed;
   left: 26%;
-  top: 10%;
+  top: 20%;
   z-index: 50;
   background-color: #FFF;
 }
@@ -1257,6 +1258,7 @@ input[type="number"]::-webkit-inner-spin-button {
     top:0;
     z-index: 20;
     background-color: #FFF;
+    padding-bottom: 10px;
   }
 }
 
@@ -1362,9 +1364,14 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (max-width: 1235px) {
-  .books_top_spring,
+  
   .books_top_autumn,
   .books_top_summer{
+    flex-direction: column;
+    align-items: center;
+    left: 190px;
+  }
+  .books_top_spring{
     flex-direction: column;
     align-items: center;
     left: 190px;
@@ -1379,7 +1386,7 @@ input[type="number"]::-webkit-inner-spin-button {
   .books_top_spring,
   .books_top_autumn,
   .books_top_summer{
-    left: 60px;
+    left: 70px;
   }
 }
 
@@ -1391,7 +1398,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0 auto;
   padding: 0 20px;
   opacity: 1;
-  transition-duration: 5s;
+  transition-duration: 2s;
 }
 .books_top_spring {
   max-width: 1440px;
@@ -1402,7 +1409,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0 auto;
   padding: 0 20px;
   opacity: 0;
-  transition-duration: 5s;
+  transition-duration: 2s;
 }
 .books_top_summer {
   max-width: 1440px;
@@ -1413,7 +1420,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0 auto;
   padding: 0 20px;
   opacity: 0;
-  transition-duration: 5s;
+  transition-duration: 2s;
 }
 .books_top_autumn{
   max-width: 1440px;
@@ -1424,7 +1431,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0 auto;
   padding: 0 20px;
   opacity: 0;
-  transition-duration: 5s;
+  transition-duration: 2s;
 }
 
 .favorites_book_one {
@@ -1437,6 +1444,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 1px solid black;
   margin-top: 40px;
   margin-right: 40px;
+}
+
+@media(max-width: 768px){
+  .favorites_book_one {
+    margin-top: 30px;
+  }
 }
 
 .favorites_book__staff {
@@ -1538,7 +1551,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .favorites_btm_book:hover {
   cursor: pointer;
-  background-color: #BB945F;
   border-color: #BB945F;
 }
 
@@ -1563,6 +1575,12 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
   margin-right: 40px;
   margin-top: 40px;
+}
+
+@media (max-width: 768px){
+  .favorites_book_two{
+    margin-bottom: 10px;
+  }
 }
 
 .favorites_btm_own {
@@ -1595,6 +1613,12 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 0;
   margin-top: 60px;
   text-align: center;
+}
+
+@media(max-width: 768px){
+  .coffeeshop_dv{
+   margin-top: 50px;
+  }
 }
 
 .coffeeshop_info {
@@ -2006,7 +2030,7 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 10px;
   width: 520px;
   height: 66px;
-  color: #8E8E8E;
+  color: #BB945F;
   font-family: Forum;
   font-size: 30px;
   font-style: normal;
@@ -2018,6 +2042,10 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
   margin-top: 20px;
   margin-bottom: 5px;
+}
+
+.libcard_table_inp::placeholder {
+  color: #8E8E8E;
 }
 
 .libcard_table_inp:focus {
