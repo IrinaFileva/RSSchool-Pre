@@ -689,7 +689,7 @@ btnSubmitLogin.addEventListener ('click', (e) => {
     };
     
     // проверка на совпадение с ЛС (емаил и пароль)(если все совпало)//
-    if (inpModalLogMailVal === localItemEmail && inpModalLogPasswordVal === localItemPassword) {
+    if (inpModalLogMailVal === localItemEmail || inpModalLogMailVal === localItemNumberCard && inpModalLogPasswordVal === localItemPassword) {
         nextVisits();
         changeSection();
         backgroundModal.style.display = 'none';                       
@@ -718,6 +718,9 @@ btnSubmitLogin.addEventListener ('click', (e) => {
 
     // имя и фамилия в модалке My Profile //
     textNameModalMyProfile.innerHTML = localItemName + ' ' + localItemLastName;
+
+    // номер карты в модалке My Profile //
+    numberCardModalMyProfile.innerHTML = localItemNumberCard; 
     
     // номер карты в меню профиля//
     numCardMainProf.innerHTML = localItemNumderCard;                 
@@ -965,10 +968,9 @@ btnBuyModalBuyCard.addEventListener('click', (k) => {
         && inpCityTowerModalBuyCard.value !== '') {
             backgroundModal.style.display = 'none';
             modalByCard.style.display = 'none';
+            localStorage.setItem('if-library:Library Card', 'Buy');
         };
 
-    // заносим данные о покупле в LS //
-    localStorage.setItem('if-library:Library Card', 'Buy');
 });
 
 // кнопка Log Out (выход из авторизации)
