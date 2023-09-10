@@ -979,6 +979,36 @@ const btnLogOutProfileMenu = document.querySelector('.btn-LogOut');
 
 btnLogOutProfileMenu.addEventListener('click', () => {
     location.reload()
+
+    // сброс с кнопки проверки карты атрибута disabled 
+btnLibCard.removeAttribute('disabled');       
+
+// функция замены кнопки на иконки //
+function hideIcons () {                      
+    btnLibCard.style.display = 'block';      
+    iconsBlock.style.display = 'none';             
+};
+
+// функция очистки инпутов
+function clearInputs () {                    
+    inpCardName.value = '';
+    inpCardNumber.value = '';
+};
+
+// провека карты и данных профиля в секции Либрари кард, с показом иконок на 10 сек) 
+btnLibCard.addEventListener('click', () => {  
+    let lsButtonsBuy = JSON.parse(localStorage.getItem('if-library:BooksBuy')) || [];      
+    if ((inpCardName.value === localItemName + ' ' + localItemLastName || inpCardName.value === localItemName) && inpCardNumber.value === localItemNumberCard) {
+        numberSessionsLibraryCard.innerHTML = localStorage.getItem('if-library:numberOfSessions') || 0;
+        numberBooksLibraryCard.innerHTML = lsButtonsBuy.length; 
+        btnLibCard.style.display = 'none';                                                    
+        iconsBlock.style.display = 'flex';                                                        
+        setTimeout(() => {                                                                    
+            hideIcons();
+            clearInputs();
+        }, 10000);
+    };                 
+});
 });
 
 
