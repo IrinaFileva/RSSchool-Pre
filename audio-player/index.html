@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio-player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Mooli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+  <audio class="audio" src="audio/Бетховен Людвиг ван (Beethoven) - К Элизе.mp3"></audio>
+  <img class="background-image" src="image/LudwigVanBeethoven.jpg" alt="L.V. Beethoven">
+  <div class="audio-player">
+    <div class="audio-player__container">
+      <img class="audio-player__image" src="image/LudwigVanBeethoven.jpg" alt="L.V. Beethoven">
+      <h1 class="audio-player__title-albom">Bagatelle #25</h1>
+      <div class="audio-player__control-panel">
+        <div class="audio-player__control-panel__container">
+          <img class="audio-player__control-panel__button-play active" src="image/play.png" alt="play">
+          <img class="audio-player__control-panel__button-pause" src="image/pause.png" alt="pause">
+          <div class="audio-player__control-panel__title-track">
+            <h2 class="audio-player__control-panel__name-composer">L.V. Beethoven</h2>
+            <h3 class="audio-player__control-panel__name-composition">To Eliza</h3>
+          </div>
+          <div class="audio-player__control-panel__volume__container">
+            <input class="audio-player__control-panel__volume__input" type="range" min="0" max="1" value="1" step="0.1">
+            <div class="audio-player__control-panel__volume__button-minus_container">
+               <svg class="audio-player__control-panel__volume__button-minus" width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                 <g>
+                   <path d="m17.34998 3.57001c-.47998-.25-1.06-.22003-1.5.08997l-8.69996 6.04998h-4.70001c-.79999 0-1.45001.65003-1.45001 1.45001v9.67999c0 .80005.65002 1.45001 1.45001 1.45001h4.70001l8.69995 6.04999c.24005.17004.53003.26001.82001.26001.23004 0 .47003-.06.67999-.16998.47003-.25.78003-.73999.78003-1.28003v-22.29998c0-.53998-.30999-1.02997-.78002-1.27997z"/>
+                   <path d="m29.5484 14.54803h-7.59546c-.80139 0-1.4516.65021-1.4516 1.4516s.65021 1.4516 1.4516 1.4516h7.59546c.80139 0 1.4516-.65021 1.4516-1.4516s-.65021-1.4516-1.4516-1.4516z"/>
+                 </g>
+               </svg>
+            </div>
+            <div class="audio-player__control-panel__volume__button-mute_container">
+              <svg class="audio-player__control-panel__volume__button-mute" width="21" height="21" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path d="m4.13 23.64996h3.56l8.33002 5.31c.41998.27002.89996.41003 1.38.41003.41998 0 .84998-.10999 1.22998-.32001.82001-.45001 1.33002-1.31 1.33002-2.25v-21.59997c0-.94-.51001-1.80005-1.33002-2.25-.82-.45001-1.82-.42004-2.60998.08997l-8.33002 5.31h-3.56c-2 0-3.63 1.62-3.63 3.62v8.06c0 1.99999 1.63 3.61998 3.63 3.61998z"/>
+                  <path class="audio-player__control-panel__volume__button-mute_pin" d="m31.06055 11.81433c-.58594-.58594-1.53516-.58594-2.12109 0l-2.06446 2.06445-2.06445-2.06445c-.58594-.58594-1.53516-.58594-2.12109 0s-.58594 1.53516 0 2.12109l2.06445 2.06445-2.06445 2.06445c-.58594.58594-.58594 1.53516 0 2.12109.29297.29297.67676.43945 1.06055.43945s.76758-.14648 1.06055-.43945l2.06445-2.06445 2.06445 2.06445c.29297.29297.67676.43945 1.06055.43945s.76758-.14648 1.06055-.43945c.58594-.58594.58594-1.53516 0-2.12109l-2.06445-2.06445 2.06445-2.06445c.58592-.58593.58592-1.53515-.00001-2.12109z"/>
+                </g>
+              </svg>
+            </div>
+            <div class="audio-player__control-panel__volume__button-plus_container">
+              <svg class="audio-player__control-panel__volume__button-plus" width="17" height="17" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path d="m17.34998 3.57001c-.47998-.25-1.06-.22003-1.5.08997l-8.69996 6.04998h-4.70001c-.79999 0-1.45001.65003-1.45001 1.45001v9.67999c0 .80005.65002 1.45001 1.45001 1.45001h4.70001l8.69995 6.04999c.24005.17004.53003.26001.82001.26001.23004 0 .47003-.06.67999-.16998.47003-.25.78003-.73999.78003-1.28003v-22.29998c0-.53998-.30999-1.02997-.78002-1.27997z"/>
+                  <path d="m29.5484 14.54822h-2.34564v-2.34564c0-.80139-.65021-1.4516-1.4516-1.4516-.80145 0-1.45166.65021-1.45166 1.4516v2.34564h-2.34656c-.80139 0-1.4516.65021-1.4516 1.4516 0 .80145.65021 1.45166 1.4516 1.45166h2.34656v2.34564c0 .80139.65021 1.4516 1.45166 1.4516.80139 0 1.4516-.65021 1.4516-1.4516v-2.34564h2.34564c.80139 0 1.4516-.65021 1.4516-1.45166 0-.80139-.65021-1.4516-1.4516-1.4516z"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <svg class="audio-player__control-panel__button-arrow_right" version="1.0" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" fill="#000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" stroke="none">
+              <path d="M2105 4813 c-734 -98 -1394 -575 -1725 -1248 -315 -639 -315 -1372 0 -2010 321 -651 923 -1102 1648 -1236 142 -26 477 -37 633 -19 575 63 1121 352 1485 784 520 617 680 1440 428 2195 -258 771 -915 1352 -1709 1510 -55 11 -138 25 -185 31 -119 14 -444 11 -575 -7z m567 -279 c1075 -139 1848 -1122 1724 -2193 -110 -942 -837 -1661 -1781 -1762 -135 -14 -395 -6 -520 16 -412 73 -763 249 -1054 530 -177 171 -308 349 -410 559 -139 285 -201 553 -201 876 0 323 62 593 200 876 297 606 890 1026 1560 1103 125 14 350 12 482 -5z"/>
+              <path d="M1280 2560 c0 -583 3 -1060 6 -1060 3 0 290 205 637 455 l632 456 3 -456 c1 -250 5 -455 8 -455 9 0 1264 1052 1264 1060 0 8 -1255 1060 -1264 1060 -3 0 -7 -205 -8 -455 l-3 -456 -632 456 c-347 250 -634 455 -637 455 -3 0 -6 -477 -6 -1060z"/>
+            </g>
+          </svg>
+          <span class="audio-player__control-panel__value_time-composition">0:00</span>
+          <input class="audio-player__control-panel__input_progress-bar" type="range" min="0" max="195.3146921" value="0" step="1">
+          <span class="audio-player__control-panel__value_time-playback">0:00</span>
+          <svg class="audio-player__control-panel__button-arrow_left" version="1.0" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" fill="#000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" stroke="none">
+              <path d="M2285 4819 c-534 -71 -1013 -313 -1375 -696 -263 -278 -457 -626 -549 -986 -59 -228 -66 -290 -66 -577 0 -287 7 -349 66 -577 208 -813 885 -1464 1708 -1643 300 -66 665 -67 961 -5 323 68 630 209 908 418 124 93 336 305 429 429 209 278 350 585 418 908 62 296 61 661 -5 961 -128 589 -504 1120 -1021 1440 -251 156 -521 258 -829 314 -111 20 -531 30 -645 14z m520 -284 c997 -124 1745 -971 1745 -1975 0 -1098 -892 -1990 -1990 -1990 -1004 0 -1851 748 -1975 1745 -94 749 249 1492 880 1908 247 163 576 283 860 315 128 15 351 13 480 -3z"/>
+              <path d="M1775 3093 c-346 -289 -631 -528 -632 -532 -2 -6 1250 -1053 1268 -1059 5 -2 10 178 11 451 l3 455 560 -453 560 -454 3 529 c1 292 1 769 0 1060 l-3 530 -560 -454 -560 -454 -3 454 c-1 250 -6 454 -10 454 -4 -1 -290 -237 -637 -527z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
