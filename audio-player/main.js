@@ -47,8 +47,14 @@ audio.addEventListener('timeupdate', () => {
     progressBar.setAttribute("value", audio.currentTime); 
     progressBar.value = audio.currentTime; 
     if (audio.ended) { 
-       buttonPause.classList.remove('active'); 
-       buttonPlay.classList.add('active'); 
+        buttonPause.classList.remove('active'); 
+        buttonPlay.classList.add('active'); 
+            if (position < backgroundAll.length -1){
+                position ++;
+            }else{
+                position = 0;
+            };
+        changePageContent(position);
     };
 });
 
@@ -62,9 +68,8 @@ progressBar.addEventListener('input', () => {
 buttonPlay.addEventListener('click', () => {
     buttonPlay.classList.remove('active');
     buttonPause.classList.add('active');
-    if (!isPlay){
-        audio.play()
-    }
+    isPlay = !isPlay;
+    audio.play();
     backgroundPlayer.classList.add('imageBig');
     containerBtnVolumePlus.classList.remove('disabled');
     containerBtnVolumeMinus.classList.remove('disabled');
@@ -74,6 +79,7 @@ buttonPlay.addEventListener('click', () => {
 buttonPause.addEventListener('click', () => {
     buttonPlay.classList.add('active');
     buttonPause.classList.remove('active');
+    isPlay = false;
     audio.pause();
     backgroundPlayer.classList.remove('imageBig');
     containerBtnVolumePlus.classList.remove('disabled');
@@ -97,13 +103,13 @@ function changePageContent(position){
     nameComposer.innerHTML = nameComposerAll[position];
     titleAlbum.innerHTML = titleAlbumAll[position];
     nameComposition.innerHTML = nameCompositionAll[position];
-    if (!isPlay){
-        audio.play()
+    if (isPlay){
+        audio.play();
         buttonPlay.classList.remove('active');
         buttonPause.classList.add('active');
     }
     else{
-        audio.pause()
+        audio.pause();
         buttonPlay.classList.add('active');
         buttonPause.classList.remove('active');
     }
