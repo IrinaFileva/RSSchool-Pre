@@ -12,6 +12,12 @@ const buttonIconDog = document.querySelector('.header__svg-dog');
 const buttonIconRabbit = document.querySelector('.header__svg-rabbit');
 
 function puttingImagesOnPage(arr){
+    if (arr.length === 0){
+        const p = document.createElement('p');
+        p.className = 'wrapper-gallery__title';
+        p.innerText = 'No images were found for your request. Try again.';
+        containerImgs.append(p);
+    } 
     arr.forEach((item)=>{
         const img = document.createElement('img');
         img.className = 'wrapper-gallery__img';
@@ -32,7 +38,7 @@ async function loadImagesSearch(url) {
     let imgJson = await resp.json();
     if (inputField.value !== ''){
         containerImgs.innerHTML = '';
-        puttingImagesOnPage(imgJson.results);  
+        puttingImagesOnPage(imgJson.results); 
     };
 };
 
@@ -49,6 +55,13 @@ async function loadImagesAnimals(url) {
 };
 
 loadImagesRandom(urlImgRandom);
+
+inputField.addEventListener('input', () => {
+    if(inputField.value === '' && buttonClean.classList.contains('active')){
+        buttonClean.classList.remove('active');
+        buttonSearch.classList.add('active');
+    }
+})
 
 inputField.addEventListener('keyup', (event) =>{
     if (event.keyCode === 13){

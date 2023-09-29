@@ -126,10 +126,18 @@
 }
 
 .main__wrapper-gallery{
+    min-height: 69vh;
     display: flex;
     flex-wrap: wrap;  
-    margin: 20px auto;
-    
+    margin: 20px auto;  
+}
+
+.wrapper-gallery__title{
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to top, #5611ec, #dd03e4);
+    font: normal 800 2rem/2rem Mooli;
+    margin: 30px auto;
 }
 
 .wrapper-gallery__img{
@@ -179,7 +187,6 @@
     border-radius: 5px;
 }
 
-
 .background-img{
     width: 100%;
     height: 100vh;
@@ -202,16 +209,18 @@
     z-index: 50000;
     cursor: zoom-out;
 }
+
 .padding_input{
     right: 4rem;
 }
+
 .padding_button{
     right: 4.5rem;
 }
+
 .overflow{
     overflow: hidden;
 }
-
 
 .active{
     display: flex;
