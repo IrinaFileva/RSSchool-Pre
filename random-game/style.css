@@ -1,0 +1,64 @@
+.body{
+    background-color: rgb(167, 244, 173);
+    overflow: hidden;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    margin: 0;
+}
+
+.button-start{
+    background-color: white ;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 8%;
+    left: 21.5%;
+    transform: translate(8% 21.5%);
+    font: normal 400 14px/14px Mooli;
+    border-radius: 10px;
+    border: 2px solid rgb(2, 62, 8);
+    cursor: pointer;
+}
+.button-start:hover{
+    width: 98px;
+    height: 28px;
+}
+.button-start:active{
+    width: 102px;
+    height: 32px;
+}
+
+.title-score,
+.number-score{
+    position: absolute;
+    top: 0;
+    left: 46%;
+    transform: translate(0 46%);
+    font: normal 400 24px/24px Mooli;
+    margin-right: 10px;
+}
+.number-score{
+    
+    left: 52%;
+}
+
+.playing-field{
+    background-image: url(поле.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    border: 3px solid rgb(2, 62, 8);
+    margin: 3.4% auto;
+}
+
+.title-result{
+    position: absolute;
+    top: 8%;
+    right: 21%;
+    transform:translate(8% 21%) ;
+    font: normal 400 20px/20px Mooli;
+}
