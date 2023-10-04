@@ -1,10 +1,10 @@
 .body{
     background-color: rgb(167, 244, 173);
-    overflow: hidden;
     padding: 0;
 }
 
 .main{
+    height: 88vh;
     display: flex;
     margin: 0;
 }
@@ -41,7 +41,7 @@
     margin-right: 10px;
 }
 .number-score{
-    
+
     left: 52%;
 }
 
@@ -61,4 +61,27 @@
     right: 21%;
     transform:translate(8% 21%) ;
     font: normal 400 20px/20px Mooli;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: rgb(11, 83, 37);
+    padding: 10px 30px;
+}
+
+.footer__year{
+    font: normal 400 16px/16px Mooli;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.footer__logo-GH,
+.footer__logo-RS{
+    height: 30px;
+    width: 55px;
+    padding: 0;
+    margin: 0;
 }
