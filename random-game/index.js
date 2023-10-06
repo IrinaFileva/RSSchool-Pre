@@ -1,7 +1,10 @@
 const buttonStart = document.querySelector('.button-start');
 const sumScore = document.querySelector('.sum-score');
 const canvas = document.querySelector('.playing-field');
+const audioApple = document.querySelector('.audio-apple');
+const audioGameOver = document.querySelector('.audio-game-over');
 const context = canvas.getContext("2d");
+
 
 let score = 0;       // счетчик очков
 
@@ -79,6 +82,7 @@ buttonStart.addEventListener('click', function game() {
     snake.cells.forEach(function (part, index) {
          context.fillRect(part.x, part.y, cell - 1, cell - 1);
              if (part.x ===  appleX  && part.y === appleY ) {
+                 audioApple.play()
                  score += 100    
                  snake.startCells++; 
                  speed -= 0.2
@@ -96,7 +100,7 @@ buttonStart.addEventListener('click', function game() {
                  snake.cells = [];
                  snake.dx = 0;
                  snake.dy = 0;
-                 
+                 audioGameOver.play()
              }
          } 
        
