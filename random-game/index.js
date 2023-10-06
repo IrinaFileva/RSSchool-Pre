@@ -1,0 +1,124 @@
+const buttonStart = document.querySelector('.button-start');
+const sumScore = document.querySelector('.sum-score');
+const canvas = document.querySelector('.playing-field');
+const context = canvas.getContext("2d");
+
+let score = 0;       // счетчик очков
+
+let cell = 20;       // клетка
+           
+let count = 0;      // скорость игры
+let speed  = 6;
+
+let snake = {         // змея 
+    x: 200,            
+    y: 200,             
+    dx: 20,          
+    dy: 0,             
+    cells: [],         
+    startCells: 4        
+};
+
+let appleX = 400;     // начальные координаты яблока
+let appleY = 400;
+let radius = 10;      // радиус яблока
+
+function drawApple() {      // яблоко
+    context.beginPath();
+    context.arc(appleX + radius, appleY + radius, radius, 0, 2 * Math.PI);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+};
+
+function getRandomNum(min, max) {                        // генератор случайных координат для яблока
+    return Math.floor(Math.random() * (max - min)) + min;    
+};
+
+buttonStart.addEventListener('click', function game() {
+
+    requestAnimationFrame(game)
+
+    if (count++ < speed) {   // скорость змейки
+        return;
+    }
+    count = 0;
+     
+    context.clearRect(0, 0, canvas.width, canvas.height); // очистка поля после змейки
+
+    snake.x += snake.dx;    // движение змейки
+    snake.y += snake.dy;
+
+    if (snake.x < 0) {                      // стены лево и право
+        snake.x = canvas.width - cell;
+    }
+    else if (snake.x >= canvas.width) {
+        snake.x = 0;
+    }
+    
+    if (snake.y < 0) {                     // стены вверх низ
+        snake.y = canvas.height - cell;
+    }
+    else if (snake.y >= canvas.height) {
+        snake.y = 0;
+    }
+      
+    snake.cells.unshift({ x: snake.x, y: snake.y });  // двигаем голову
+   
+    if (snake.cells.length > snake.startCells) {  // чистим хвост
+        snake.cells.pop();
+    }
+    
+    drawApple(); // добавляем яблоко
+
+    sumScore.innerHTML = score;  // сумма очков
+
+    context.fillStyle = 'rgb(2, 62, 8)';  // цвет змеи
+
+
+    snake.cells.forEach(function (part, index) {
+         context.fillRect(part.x, part.y, cell - 1, cell - 1);
+             if (part.x ===  appleX  && part.y === appleY ) {
+                 score += 100    
+                 snake.startCells++; 
+                 speed -= 0.2
+                 appleX = getRandomNum(0, 20) * cell
+                 appleY = getRandomNum(0, 20) * cell   
+             }
+         for (var i = index + 1; i < snake.cells.length; i++) {
+             if (part.x === snake.cells[i].x && part.y === snake.cells[i].y) {
+                 count = 0;
+                 speed = 10000000;
+                 context.clearRect(0, 0, canvas.width, canvas.height);
+                 snake.x = 200;
+                 snake.y = 200;
+                 snake.startCells = 0;
+                 snake.cells = [];
+                 snake.dx = 0;
+                 snake.dy = 0;
+                 
+             }
+         } 
+       
+     });
+
+})
+
+document.addEventListener('keydown', function (event) {
+    if (event.keyCode === 37 && snake.dx === 0) {
+        snake.dx = -cell;
+        snake.dy = 0;
+    }
+    else if (event.keyCode === 38 && snake.dy === 0) {
+        snake.dy = -cell;
+        snake.dx = 0;
+    }
+    else if (event.keyCode === 39 && snake.dx === 0) {
+        snake.dx = cell;
+        snake.dy = 0;
+    }
+    else if (event.keyCode === 40 && snake.dy === 0) {
+        snake.dy = cell;
+        snake.dx = 0;
+    }
+});
