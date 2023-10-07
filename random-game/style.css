@@ -47,7 +47,7 @@
 }
 
 .playing-field{
-    background-image: url(поле.png);
+    background-image: url(Image/поле.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -85,4 +85,65 @@
     width: 55px;
     padding: 0;
     margin: 0;
+}
+
+.modal-gameover{
+    display: none;
+    width: 99%;
+    height: 98vh;
+    position:relative;
+    z-index: 50;
+}
+.gameover_block{
+    display: none;
+    background-color: rgb(11, 83, 37);
+    text-align: center;
+    width: 50%;
+    height: 60vh;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    border-radius: 10px;
+    border: 2px solid black;
+    transform: translate(15% 25%); 
+    z-index: 70;
+}
+.gameover_title-container{
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+
+.gameover_snake{
+    width:90%;
+    height: 60vh;
+}
+.gameover_title{
+    color: red;
+    font: normal 400 36px/36px Mooli;
+}
+.gameover_score{
+    color: yellowgreen;
+    font: normal 400 24px/24px Mooli;
+}
+.gameover_button{
+    font: normal 400 18px/18px Mooli;
+    background-color: rgb(247, 247, 29);
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+.gameover_button:hover{
+    width: 51px;
+    height: 31px;
+}
+.gameover_button:active{
+    width: 53px;
+    height: 33px;
+}
+
+.active{
+    display: block;
 }

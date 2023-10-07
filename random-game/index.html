@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
+  <div class="modal-gameover" onclick="window.location.reload();"></div>
+    <div class="gameover_block">
+        <img class="gameover_snake" src="Image/Змейка.png">
+        <div class="gameover_title-container">
+        <h2 class="gameover_title">GAME OVER!</h2>
+        <p class="gameover_score"> Your score : </p>
+        <button class="gameover_button" onclick="window.location.reload();">Ок</button>
+        </div>
+  </div>
 <main class="main">
-  <audio class="audio-apple" src="tresk-pri-otkusyivanii-yabloka.mp3"></audio>
-  <audio class="audio-game-over" src="1554736910_45f8599eec7166a.mp3"></audio>
+  <audio class="audio-apple" src="Audio/tresk-pri-otkusyivanii-yabloka.mp3"></audio>
+  <audio class="audio-game-over" src="Audio/1554736910_45f8599eec7166a.mp3"></audio>
   <button class="button-start">Start Game</button>
   <p class="title-score">Score: </p>
   <p class="sum-score">0</p>

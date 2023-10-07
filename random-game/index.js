@@ -3,6 +3,8 @@ const sumScore = document.querySelector('.sum-score');
 const canvas = document.querySelector('.playing-field');
 const audioApple = document.querySelector('.audio-apple');
 const audioGameOver = document.querySelector('.audio-game-over');
+const modalGameOver = document.querySelector('.modal-gameover');
+const blockGameOver = document.querySelector('.gameover_block')
 const context = canvas.getContext("2d");
 
 
@@ -101,6 +103,8 @@ buttonStart.addEventListener('click', function game() {
                  snake.dx = 0;
                  snake.dy = 0;
                  audioGameOver.play()
+                 modalGameOver.classList.add('active')
+                 blockGameOver.classList.add('active')
              }
          } 
        
