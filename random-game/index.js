@@ -1,15 +1,39 @@
 const buttonStart = document.querySelector('.button-start');
+const buttonPause = document.querySelector('.button-pause');
 const sumScore = document.querySelector('.sum-score');
 const canvas = document.querySelector('.playing-field');
 const audioApple = document.querySelector('.audio-apple');
 const audioGameOver = document.querySelector('.audio-game-over');
 const modalGameOver = document.querySelector('.modal-gameover');
 const blockGameOver = document.querySelector('.gameover_block')
+const modalPause = document.querySelector('.pause')
+const scoreModalGameOver = document.querySelector('.gameover_score')
 const context = canvas.getContext("2d");
+const results = JSON.parse(localStorage.getItem('if-totalScore')) || [];
+const titleResults = document.querySelector('.title-result')
 
+const maxResult = results.sort((x, y) => {
+    if (x < y) return 1;
+    if (x === y) return 0; 
+    if (x > y) return -1; 
+  });
+
+for(let i = 0; i < maxResult.length; i++){
+    if(maxResult.length > 10){
+        maxResult.pop()
+    }
+    if(maxResult.length <= 10){
+    const p = document.createElement('p')
+    p.className = 'number_result'
+    p.innerText = maxResult[i];
+    titleResults.append(p)
+    }
+}
+
+console.log(maxResult)
 
 let score = 0;       // счетчик очков
-
+let totalScore = [];
 let cell = 20;       // клетка
            
 let count = 0;      // скорость игры
@@ -41,6 +65,9 @@ function getRandomNum(min, max) {                        // генератор �
 };
 
 buttonStart.addEventListener('click', function game() {
+    buttonStart.classList.remove('active')
+    buttonPause.classList.add('active')
+
 
     requestAnimationFrame(game)
 
@@ -78,6 +105,8 @@ buttonStart.addEventListener('click', function game() {
 
     sumScore.innerHTML = score;  // сумма очков
 
+    scoreModalGameOver.innerHTML = 'Your score: ' + String(score)
+
     context.fillStyle = 'rgb(2, 62, 8)';  // цвет змеи
 
 
@@ -105,11 +134,24 @@ buttonStart.addEventListener('click', function game() {
                  audioGameOver.play()
                  modalGameOver.classList.add('active')
                  blockGameOver.classList.add('active')
-             }
-         } 
+                 maxResult.push(score)
+                 localStorage.setItem('if-totalScore', JSON.stringify(maxResult))
+            }
+        }
        
-     });
+    });
 
+    buttonPause.addEventListener('click', () => {
+        speed = speed + 100000;
+        modalPause.classList.add('active')
+    })
+    modalPause.addEventListener('click',() => {
+        if (speed > 100000){
+            speed = speed - 100000;
+            modalPause.classList.remove('active') 
+        }
+    })
+     
 })
 
 document.addEventListener('keydown', function (event) {
@@ -128,5 +170,5 @@ document.addEventListener('keydown', function (event) {
     else if (event.keyCode === 40 && snake.dy === 0) {
         snake.dy = cell;
         snake.dx = 0;
-    }
-});
+    }  
+})
