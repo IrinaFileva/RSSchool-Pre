@@ -1,0 +1,395 @@
+.body{
+    background-color: rgb(167, 244, 173);
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    height: 88vh;
+    display: flex;
+    margin: 0;
+}
+
+.game__img-snake{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 10vh;
+    opacity: 0.7;
+}
+
+.button-start{
+    display: none;
+    width: 240px;
+    height: 50px;
+    position: absolute;
+    top: 65%;
+    left: 41%;
+    background-color: white ;
+    font: normal 400 24px/24px Mooli;
+    border-radius: 10px;
+    border: 2px solid rgb(2, 62, 8);
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 60;
+}
+.button-start:hover{
+    width: 238px;
+    height: 49px;
+}
+.button-start:active{
+    width: 241px;
+    height: 51px;
+}
+
+.button-pause{
+    display: none;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    bottom: 21%;
+    left: 25%;
+    transform: translate(21% 25%);
+    background-color: rgb(242, 246, 159, 0.5) ;
+    font: normal 400 20px/20px Mooli;
+    border-radius: 10px;
+    border: 2px solid rgb(2, 62, 8);
+    padding: 0;
+    margin: 0;   
+    cursor: pointer;
+}
+.button-pause:hover{
+    width: 79px;
+    height: 29px;
+}
+.button-pause:active,
+.button-pause:checked{
+    width: 81px;
+    height: 31px;
+}
+
+.button-mute{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 9%;
+    left: 27%;
+    transform: translate(9% 27%);
+    fill: rgb(11, 35, 13);
+    border-radius: 100%;
+    border: 2px solid rgb(11, 35, 13);
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 15;
+}
+.button-mute:hover{
+    width: 29px;
+    height: 29px;
+}
+.button-mute:active{
+    width: 31px;
+    height: 31px;
+}
+.button-mute-cross{
+    display: none;
+    fill: black;
+}
+
+.title-score,
+.sum-score{
+    position: absolute;
+    top: 0;
+    left: 45%;
+    transform: translate(0 45%);
+    font: normal 400 24px/24px Mooli;
+    margin-right: 10px;
+}
+.sum-score{
+    left: 51%;
+    transform: translate(51%);
+}
+
+.playing-field{
+    background-image: url(Image/поле.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    border: 3px solid rgb(2, 62, 8);
+    margin: 4% auto;
+}
+
+.title-result{
+    position: absolute;
+    top: 8%;
+    right: 21%;
+    transform:translate(8% 21%);
+    text-align: center;
+    font: normal 400 20px/20px Mooli;
+}
+.number_result{
+    font: normal 400 16px/16px Mooli;
+}
+
+.game_img-apple1,
+.game_img-apple{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 18%;
+    right: 5%;
+    opacity: 0.6;
+}
+.game_img-apple1{
+    width: 250px;
+    top: 10%;
+    right: 3%;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: rgb(11, 83, 37);
+    padding: 10px 30px;
+    margin: 0;
+}
+
+.footer__year{
+    font: normal 400 18px/18px Mooli;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.footer__logo-GH,
+.footer__logo-RS{
+    height: 30px;
+    width: 60px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.footer__logo-GH:hover,
+.footer__logo-RS:hover{
+    width: 59px;
+    height: 29px;
+}
+.footer__logo-GH:active,
+.footer__logo-RS:active{
+    width: 61px;
+    height: 31px;
+}
+
+.gameOver{
+    display: none;
+    width: 99%;
+    height: 98vh;
+    background-color: grey;
+    position: absolute;
+    z-index: 50;
+    opacity: 0.2;
+}
+
+.gameOver__wrapper{
+    display: none;
+    width: 50%;
+    height: 60vh;
+    text-align: center;
+    background-color: rgb(11, 83, 37);
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    transform: translate(15% 25%);
+    border-radius: 10px;
+    border: 2px solid black; 
+    z-index: 70;
+}
+
+.gameOver__img-snake{
+    width: 90%;
+    height: 60vh;
+}
+
+.gameOver__container-title{
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+
+.gameOver__title{
+    color: red;
+    font: normal 400 36px/36px Mooli;
+}
+
+.gameOver__total-score{
+    color: yellowgreen;
+    font: normal 400 24px/24px Mooli;
+}
+
+.gameOver__button{
+    font: normal 400 18px/18px Mooli;
+    background-color: rgb(247, 247, 29);
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+.gameOver__button:hover{
+    width: 51px;
+    height: 31px;
+}
+.gameOver__button:active{
+    width: 53px;
+    height: 33px;
+}
+
+.modal-pause{
+    display: none;
+    width: 100%;
+    height: 98%;
+    position:absolute;
+    background-color: rgb(128, 128, 128, 0.3);
+    z-index: 50;
+}
+
+#modal-pause__title{
+    position:absolute;
+    top: 35%;
+    left: 46%;
+    font: normal 400 36px/36px Mooli;
+    animation: modal-pause__title 1s linear infinite;
+    -webkit-animation: modal-pause__title 1s linear infinite; 
+}
+
+@-webkit-keyframes modal-pause__title {
+    100% { color: rgba(9, 9, 9, 0); }
+}
+@keyframes modal-pause__title {
+    100% { color: rgba(9, 9, 9, 0); }
+}
+
+.active{
+    display: block;
+}
+
+
+@media(max-width:1380px){
+    .button-mute{
+        left: 22%;
+    }
+    .button-pause{
+        left: 20%;
+    }
+    .game__img-snake{
+        width: 250px;
+        height: 250px;
+    } 
+}
+@media(max-width:1310px){
+    .title-score{
+        left: 45%;
+    }
+    .title-result{
+        right: 15%;
+    }
+    .game_img-apple1{
+        display: none;
+    }
+}
+@media(max-width:1210px){
+    .button-mute{
+        left: 20%;
+    }
+    .button-pause{
+        left: 18%;
+    }
+}
+@media(max-width:1110px){
+    .playing-field{
+      margin: 5% auto;
+    }
+    .button-mute{
+        left:18%;
+    }
+    .button-pause{
+        left: 14%;
+    }
+    .title-result{
+        right: 10%;
+    }
+    .game__img-snake{
+        width: 200px;
+        height: 200px;
+    }
+    .game_img-apple{
+        right: 3%;
+    }
+}
+@media(max-width:1000px){
+    .playing-field{
+        margin: 5.5% auto;
+    }
+    .button-mute{
+        left: 9%;
+    }
+    .button-pause{
+        left: 7%;
+    }
+    .game__img-snake{
+        display: none;
+    }
+    .game_img-apple{
+        right: 0;
+    }
+}
+@media(max-width:955px){
+    .playing-field{
+        margin: 6.5% auto;
+    }
+    .title-score{
+        left: 43%;
+    }
+    .title-result{
+        right: 5%;
+    }
+    .game_img-apple{
+        display: none;
+    }
+}
+@media(max-width:855px){
+    .title-result{
+        right: 0;
+    }
+    .button-mute{
+        left: 3%;
+    }
+    .button-pause{
+        left: 3%;
+    }
+}
+@media(max-width:767px){
+    .title-result{
+        display: none;
+    }
+    .button-mute{
+        left: 0;
+    }
+    .button-pause{
+        left: 0;
+    }
+}
+@media(max-width:710px){
+    .playing-field{
+        margin: 10% auto;
+    }
+    .button-mute{
+        display: none;
+    }
+    .button-pause{
+        display: none;
+    }
+}
