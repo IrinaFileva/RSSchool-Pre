@@ -8,46 +8,30 @@
     display: flex;
     margin: 0;
 }
-.body-snake{
+
+.game__img-snake{
     width: 400px;
     height: 400px;
     position: absolute;
     top: 10%;
     opacity: 0.7;
 }
-.button-pause{
-    display: none;
-    background-color: rgb(242, 246, 159, 0.5) ;
-    width: 80px;
-    height: 30px;
-    position: absolute;
-    top: 9%;
-    left: 25%;
-    transform: translate(9% 25%);
-    font: normal 400 20px/20px Mooli;
-    border-radius: 10px;
-    border: 2px solid rgb(2, 62, 8);
-    cursor: pointer;
-    padding: 0;
-    margin: 0;   
-}
-
 
 .button-start{
     display: none;
-    background-color: white ;
     width: 240px;
     height: 50px;
     position: absolute;
     top: 60%;
     left: 41%;
     transform: translate(60% 41%);
+    background-color: white ;
     font: normal 400 24px/24px Mooli;
     border-radius: 10px;
     border: 2px solid rgb(2, 62, 8);
-    cursor: pointer;
     padding: 0;
     margin: 0;
+    cursor: pointer;
     z-index: 60;
 }
 .button-start:hover{
@@ -57,6 +41,32 @@
 .button-start:active{
     width: 241px;
     height: 51px;
+}
+
+.button-pause{
+    display: none;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 9%;
+    left: 25%;
+    transform: translate(9% 25%);
+    background-color: rgb(242, 246, 159, 0.5) ;
+    font: normal 400 20px/20px Mooli;
+    border-radius: 10px;
+    border: 2px solid rgb(2, 62, 8);
+    padding: 0;
+    margin: 0;   
+    cursor: pointer;
+}
+.button-pause:hover{
+    width: 79px;
+    height: 29px;
+}
+.button-pause:active,
+.button-pause:checked{
+    width: 81px;
+    height: 31px;
 }
 
 .title-score,
@@ -83,22 +93,23 @@
 }
 
 .title-result{
-    text-align: center;
     position: absolute;
     top: 8%;
     right: 21%;
-    transform:translate(8% 21%) ;
+    transform:translate(8% 21%);
+    text-align: center;
     font: normal 400 20px/20px Mooli;
 }
 .number_result{
     font: normal 400 16px/16px Mooli;
 }
-.body-apple{
+
+.game_img-apple{
     width: 180px;
     height: 180px;
     position: absolute;
     bottom: 18%;
-    right: 10%;
+    right: 5%;
     opacity: 0.7;
 }
 
@@ -120,53 +131,69 @@
 .footer__logo-GH,
 .footer__logo-RS{
     height: 30px;
-    width: 55px;
+    width: 60px;
     padding: 0;
     margin: 0;
+    cursor: pointer;
+}
+.footer__logo-GH:hover,
+.footer__logo-RS:hover{
+    width: 59px;
+    height: 29px;
+}
+.footer__logo-GH:active,
+.footer__logo-RS:active{
+    width: 61px;
+    height: 31px;
 }
 
-.modal-gameover{
-    background-color: grey;
+.gameOver{
     display: none;
     width: 99%;
     height: 98vh;
-    position:absolute;
+    background-color: grey;
+    position: absolute;
     z-index: 50;
     opacity: 0.2;
 }
-.gameover_block{
+
+.gameOver__wrapper{
     display: none;
-    background-color: rgb(11, 83, 37);
-    text-align: center;
     width: 50%;
     height: 60vh;
+    text-align: center;
+    background-color: rgb(11, 83, 37);
     position: absolute;
     top: 15%;
     left: 25%;
+    transform: translate(15% 25%);
     border-radius: 10px;
-    border: 2px solid black;
-    transform: translate(15% 25%); 
+    border: 2px solid black; 
     z-index: 70;
 }
-.gameover_title-container{
+
+.gameOver__img-snake{
+    width: 90%;
+    height: 60vh;
+}
+
+.gameOver__container-title{
     position: absolute;
     top: 5%;
     right: 15%;
 }
 
-.gameover_snake{
-    width:90%;
-    height: 60vh;
-}
-.gameover_title{
+.gameOver__title{
     color: red;
     font: normal 400 36px/36px Mooli;
 }
-.gameover_score{
+
+.gameOver__total-score{
     color: yellowgreen;
     font: normal 400 24px/24px Mooli;
 }
-.gameover_button{
+
+.gameOver__button{
     font: normal 400 18px/18px Mooli;
     background-color: rgb(247, 247, 29);
     width: 50px;
@@ -175,38 +202,37 @@
     padding-left: 5px;
     cursor: pointer;
 }
-.gameover_button:hover{
+.gameOver__button:hover{
     width: 51px;
     height: 31px;
 }
-.gameover_button:active{
+.gameOver__button:active{
     width: 53px;
     height: 33px;
 }
 
-.pause{
-    background-color: rgb(128, 128, 128, 0.3);
+.modal-pause{
     display: none;
     width: 99%;
     height: 98%;
     position:absolute;
+    background-color: rgb(128, 128, 128, 0.3);
     z-index: 50;
 }
 
-#title{
-    font: normal 400 36px/36px Mooli;
+#modal-pause__title{
     position:absolute;
-    top:30%;
-    left: 45%;
-    -webkit-animation: title 1s linear infinite;
-     animation: title 1s linear infinite;
-    
+    top: 35%;
+    left: 46%;
+    font: normal 400 36px/36px Mooli;
+    animation: modal-pause__title 1s linear infinite;
+    -webkit-animation: modal-pause__title 1s linear infinite; 
 }
 
-@-webkit-keyframes title {
+@-webkit-keyframes modal-pause__title {
     100% { color: rgba(9, 9, 9, 0); }
 }
-@keyframes title {
+@keyframes modal-pause__title {
     100% { color: rgba(9, 9, 9, 0); }
 }
 

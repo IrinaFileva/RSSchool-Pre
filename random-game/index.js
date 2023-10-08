@@ -1,45 +1,46 @@
+const scoreModalGameOver = document.querySelector('.gameOver__total-score');
+const blockGameOver = document.querySelector('.gameOver__wrapper');
+const audioGameOver = document.querySelector('.audio-game-over');
+const audioApple = document.querySelector('.audio-apple');
 const buttonStart = document.querySelector('.button-start');
 const buttonPause = document.querySelector('.button-pause');
+const titleResults = document.querySelector('.title-result');
 const sumScore = document.querySelector('.sum-score');
+const modalGameOver = document.querySelector('.gameOver');
+const modalPause = document.querySelector('.modal-pause');
 const canvas = document.querySelector('.playing-field');
-const audioApple = document.querySelector('.audio-apple');
-const audioGameOver = document.querySelector('.audio-game-over');
-const modalGameOver = document.querySelector('.modal-gameover');
-const blockGameOver = document.querySelector('.gameover_block')
-const modalPause = document.querySelector('.pause')
-const scoreModalGameOver = document.querySelector('.gameover_score')
 const context = canvas.getContext("2d");
 const results = JSON.parse(localStorage.getItem('if-totalScore')) || [];
-const titleResults = document.querySelector('.title-result')
 
 const maxResult = results.sort((x, y) => {
     if (x < y) return 1;
     if (x === y) return 0; 
     if (x > y) return -1; 
-  });
+});
 
 for(let i = 0; i < maxResult.length; i++){
     if(maxResult.length > 10){
         maxResult.pop()
     }
     if(maxResult.length <= 10){
-    const p = document.createElement('p')
-    p.className = 'number_result'
-    p.innerText = maxResult[i];
-    titleResults.append(p)
+        const p = document.createElement('p')
+        p.className = 'number_result'
+        p.innerText = maxResult[i];
+        titleResults.append(p)
     }
-}
+};
 
-console.log(maxResult)
-
-let score = 0;       // счетчик очков
+let score = 0;  
+     
 let totalScore = [];
-let cell = 20;       // клетка
-           
-let count = 0;      // скорость игры
+
+let cell = 20;   
+
+let count = 0;   
+
 let speed  = 6;
 
-let snake = {         // змея 
+let snake = {          
     x: 200,            
     y: 200,             
     dx: 20,          
@@ -48,11 +49,11 @@ let snake = {         // змея
     startCells: 4        
 };
 
-let appleX = 400;     // начальные координаты яблока
+let appleX = 400;     
 let appleY = 400;
-let radius = 10;      // радиус яблока
+let radius = 10;      
 
-function drawApple() {      // яблоко
+function drawApple() {      
     context.beginPath();
     context.arc(appleX + radius, appleY + radius, radius, 0, 2 * Math.PI);
     context.fillStyle = "red";
@@ -60,20 +61,20 @@ function drawApple() {      // яблоко
     context.closePath();
 };
 
-function getRandomNum(min, max) {                        // генератор случайных координат для яблока
+function getRandomNum(min, max) {                        
     return Math.floor(Math.random() * (max - min)) + min;    
 };
 
 buttonStart.addEventListener('click', function game() {
-    buttonStart.classList.remove('active')
-    buttonPause.classList.add('active')
+    buttonStart.classList.remove('active');
+    buttonPause.classList.add('active');
 
-
-    requestAnimationFrame(game)
+    requestAnimationFrame(game);
 
     if (count++ < speed) {   // скорость змейки
         return;
     }
+
     count = 0;
      
     context.clearRect(0, 0, canvas.width, canvas.height); // очистка поля после змейки
@@ -81,7 +82,7 @@ buttonStart.addEventListener('click', function game() {
     snake.x += snake.dx;    // движение змейки
     snake.y += snake.dy;
 
-    if (snake.x < 0) {                      // стены лево и право
+    if (snake.x < 0) {                      // стены влево и вправо
         snake.x = canvas.width - cell;
     }
     else if (snake.x >= canvas.width) {
@@ -103,56 +104,55 @@ buttonStart.addEventListener('click', function game() {
     
     drawApple(); // добавляем яблоко
 
-    sumScore.innerHTML = score;  // сумма очков
+    sumScore.innerHTML = score; 
 
-    scoreModalGameOver.innerHTML = 'Your score: ' + String(score)
+    scoreModalGameOver.innerHTML = 'Your score: ' + String(score);
 
-    context.fillStyle = 'rgb(2, 62, 8)';  // цвет змеи
+    context.fillStyle = 'rgb(8, 30, 10)';  // цвет змеи
 
+    snake.cells.forEach((part, index) => {
+        context.fillRect(part.x, part.y, cell - 1, cell - 1);
 
-    snake.cells.forEach(function (part, index) {
-         context.fillRect(part.x, part.y, cell - 1, cell - 1);
-             if (part.x ===  appleX  && part.y === appleY ) {
-                 audioApple.play()
-                 score += 100    
-                 snake.startCells++; 
-                 speed -= 0.2
-                 appleX = getRandomNum(0, 20) * cell
-                 appleY = getRandomNum(0, 20) * cell   
-             }
-         for (var i = index + 1; i < snake.cells.length; i++) {
-             if (part.x === snake.cells[i].x && part.y === snake.cells[i].y) {
-                 count = 0;
-                 speed = 10000000;
-                 context.clearRect(0, 0, canvas.width, canvas.height);
-                 snake.x = 200;
-                 snake.y = 200;
-                 snake.startCells = 0;
-                 snake.cells = [];
-                 snake.dx = 0;
-                 snake.dy = 0;
-                 audioGameOver.play()
-                 modalGameOver.classList.add('active')
-                 blockGameOver.classList.add('active')
-                 maxResult.push(score)
-                 localStorage.setItem('if-totalScore', JSON.stringify(maxResult))
-            }
+        if (part.x ===  appleX  && part.y === appleY ) {
+            audioApple.play();
+            score += 100;    
+            snake.startCells++; 
+            speed -= 0.2;
+            appleX = getRandomNum(0, 20) * cell;
+            appleY = getRandomNum(0, 20) * cell;  
         }
-       
+
+        for (var i = index + 1; i < snake.cells.length; i++) {
+            if (part.x === snake.cells[i].x && part.y === snake.cells[i].y) {
+                count = 0;
+                speed = 10000000;
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                snake.x = 200;
+                snake.y = 200;
+                snake.startCells = 0;
+                snake.cells = [];
+                snake.dx = 0;
+                snake.dy = 0;
+                audioGameOver.play();
+                modalGameOver.classList.add('active');
+                blockGameOver.classList.add('active');
+                maxResult.push(score);
+                localStorage.setItem('if-totalScore', JSON.stringify(maxResult));
+            }
+        } 
     });
 
     buttonPause.addEventListener('click', () => {
         speed = speed + 100000;
-        modalPause.classList.add('active')
-    })
+        modalPause.classList.add('active');
+    });
     modalPause.addEventListener('click',() => {
         if (speed > 100000){
             speed = speed - 100000;
-            modalPause.classList.remove('active') 
+            modalPause.classList.remove('active') ;
         }
-    })
-     
-})
+    });    
+});
 
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 37 && snake.dx === 0) {
@@ -171,4 +171,4 @@ document.addEventListener('keydown', function (event) {
         snake.dy = cell;
         snake.dx = 0;
     }  
-})
+});
