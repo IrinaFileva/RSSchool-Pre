@@ -69,6 +69,33 @@
     height: 31px;
 }
 
+.button-mute{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 25%;
+    right: 11.5%;
+    fill: rgb(11, 35, 13);
+    border-radius: 100%;
+    border: 2px solid rgb(11, 35, 13);
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 15;
+}
+.button-mute:hover{
+    width: 29px;
+    height: 29px;
+}
+.button-mute:active{
+    width: 31px;
+    height: 31px;
+}
+.button-mute-cross{
+    display: none;
+    fill: black;
+}
+
 .title-score,
 .sum-score{
     position: absolute;
@@ -105,8 +132,8 @@
 }
 
 .game_img-apple{
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     position: absolute;
     bottom: 18%;
     right: 5%;
