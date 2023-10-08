@@ -1,6 +1,7 @@
 .body{
     background-color: rgb(167, 244, 173);
     padding: 0;
+    overflow: hidden;
 }
 
 .main{
@@ -48,9 +49,9 @@
     width: 80px;
     height: 30px;
     position: absolute;
-    top: 9%;
+    bottom: 20%;
     left: 25%;
-    transform: translate(9% 25%);
+    transform: translate(20% 25%);
     background-color: rgb(242, 246, 159, 0.5) ;
     font: normal 400 20px/20px Mooli;
     border-radius: 10px;
@@ -73,8 +74,8 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    bottom: 25%;
-    right: 11.5%;
+    top: 9%;
+    left: 26.5%;
     fill: rgb(11, 35, 13);
     border-radius: 100%;
     border: 2px solid rgb(11, 35, 13);
@@ -106,7 +107,7 @@
     margin-right: 10px;
 }
 .sum-score{
-    left: 50.5%;
+    left: 51%;
 }
 
 .playing-field{
@@ -131,13 +132,19 @@
     font: normal 400 16px/16px Mooli;
 }
 
+.game_img-apple1,
 .game_img-apple{
     width: 200px;
     height: 200px;
     position: absolute;
     bottom: 18%;
     right: 5%;
-    opacity: 0.7;
+    opacity: 0.6;
+}
+.game_img-apple1{
+    width: 350px;
+    top: 10%;
+    right: -50px;
 }
 
 .footer{
