@@ -1,7 +1,7 @@
 .body{
     background-color: rgb(167, 244, 173);
     padding: 0;
-    overflow: hidden;
+    margin: 0;
 }
 
 .main{
@@ -14,7 +14,7 @@
     width: 400px;
     height: 400px;
     position: absolute;
-    top: 10%;
+    top: 10vh;
     opacity: 0.7;
 }
 
@@ -23,9 +23,8 @@
     width: 240px;
     height: 50px;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 41%;
-    transform: translate(60% 41%);
     background-color: white ;
     font: normal 400 24px/24px Mooli;
     border-radius: 10px;
@@ -49,9 +48,9 @@
     width: 80px;
     height: 30px;
     position: absolute;
-    bottom: 20%;
+    bottom: 21%;
     left: 25%;
-    transform: translate(20% 25%);
+    transform: translate(21% 25%);
     background-color: rgb(242, 246, 159, 0.5) ;
     font: normal 400 20px/20px Mooli;
     border-radius: 10px;
@@ -75,7 +74,8 @@
     height: 30px;
     position: absolute;
     top: 9%;
-    left: 26.5%;
+    left: 27%;
+    transform: translate(9% 27%);
     fill: rgb(11, 35, 13);
     border-radius: 100%;
     border: 2px solid rgb(11, 35, 13);
@@ -108,6 +108,7 @@
 }
 .sum-score{
     left: 51%;
+    transform: translate(51%);
 }
 
 .playing-field{
@@ -117,7 +118,7 @@
     background-size: cover;
     opacity: 0.8;
     border: 3px solid rgb(2, 62, 8);
-    margin: 3.4% auto;
+    margin: 4% auto;
 }
 
 .title-result{
@@ -142,9 +143,9 @@
     opacity: 0.6;
 }
 .game_img-apple1{
-    width: 350px;
+    width: 250px;
     top: 10%;
-    right: -50px;
+    right: 3%;
 }
 
 .footer{
@@ -154,6 +155,7 @@
     height: 40px;
     background-color: rgb(11, 83, 37);
     padding: 10px 30px;
+    margin: 0;
 }
 
 .footer__year{
@@ -247,7 +249,7 @@
 
 .modal-pause{
     display: none;
-    width: 99%;
+    width: 100%;
     height: 98%;
     position:absolute;
     background-color: rgb(128, 128, 128, 0.3);
@@ -272,4 +274,122 @@
 
 .active{
     display: block;
+}
+
+
+@media(max-width:1380px){
+    .button-mute{
+        left: 22%;
+    }
+    .button-pause{
+        left: 20%;
+    }
+    .game__img-snake{
+        width: 250px;
+        height: 250px;
+    } 
+}
+@media(max-width:1310px){
+    .title-score{
+        left: 45%;
+    }
+    .title-result{
+        right: 15%;
+    }
+    .game_img-apple1{
+        display: none;
+    }
+}
+@media(max-width:1210px){
+    .button-mute{
+        left: 20%;
+    }
+    .button-pause{
+        left: 18%;
+    }
+}
+@media(max-width:1110px){
+    .playing-field{
+      margin: 5% auto;
+    }
+    .button-mute{
+        left:18%;
+    }
+    .button-pause{
+        left: 14%;
+    }
+    .title-result{
+        right: 10%;
+    }
+    .game__img-snake{
+        width: 200px;
+        height: 200px;
+    }
+    .game_img-apple{
+        right: 3%;
+    }
+}
+@media(max-width:1000px){
+    .playing-field{
+        margin: 5.5% auto;
+    }
+    .button-mute{
+        left: 9%;
+    }
+    .button-pause{
+        left: 7%;
+    }
+    .game__img-snake{
+        display: none;
+    }
+    .game_img-apple{
+        right: 0;
+    }
+}
+@media(max-width:955px){
+    .playing-field{
+        margin: 6.5% auto;
+    }
+    .title-score{
+        left: 43%;
+    }
+    .title-result{
+        right: 5%;
+    }
+    .game_img-apple{
+        display: none;
+    }
+}
+@media(max-width:855px){
+    .title-result{
+        right: 0;
+    }
+    .button-mute{
+        left: 3%;
+    }
+    .button-pause{
+        left: 3%;
+    }
+}
+@media(max-width:767px){
+    .title-result{
+        display: none;
+    }
+    .button-mute{
+        left: 0;
+    }
+    .button-pause{
+        left: 0;
+    }
+}
+@media(max-width:710px){
+    .playing-field{
+        margin: 10% auto;
+    }
+    .button-mute{
+        display: none;
+    }
+    .button-pause{
+        display: none;
+    }
 }
