@@ -40,7 +40,7 @@ let cell = 20;
 
 let count = 0;   
 
-let speed  = 6;
+let speed  = 8;
 
 let snake = {          
     x: 200,            
